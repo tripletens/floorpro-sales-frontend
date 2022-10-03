@@ -1,0 +1,10 @@
+.navbar-toggler {
+    float: right;
+}
+ul .dropdown-menu.show{
+    width: fit-content !important;
+}
+
+.btn-second{
+    background-color: yellow;
+}
