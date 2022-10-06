@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 export const AdminSidebar = () => {
   return (
@@ -13,7 +14,7 @@ export const AdminSidebar = () => {
         }}
       >
         <div className="sidebar-menu">
-          <div className="sidebar-menu-item">
+        <a href={"/admin-dashboard"} className="sidebar-menu-item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -28,12 +29,26 @@ export const AdminSidebar = () => {
               />
             </svg>{" "}
             Dashboard
-          </div>
-          <div className="sidebar-menu-item">Sales Orders</div>
-          <div className="sidebar-menu-item">Message</div>
-          <div className="sidebar-menu-item">Requests</div>
-          <div className="sidebar-menu-item">Queries</div>
-          <div className="sidebar-menu-item">Settings</div>
+          </a>
+
+          <a href={"/admin-dashboard/orders"} className="sidebar-menu-item">
+            Sales Orders
+          </a>
+          <a href={"/admin-dashboard/products"} className="sidebar-menu-item">
+              Products
+          </a>
+          <a href={"/admin-dashboard/messages"} className="sidebar-menu-item">
+            Message
+          </a>
+          <a href={"/admin-dashboard/requests"} className="sidebar-menu-item">
+            Requests
+          </a>
+          <a href={"/admin-dashboard/queries"} className="sidebar-menu-item">
+            Queries
+          </a>
+          <a href={"/admin-dashboard/settings"} className="sidebar-menu-item">
+            Settings
+          </a>
         </div>
       </div>
     </>
