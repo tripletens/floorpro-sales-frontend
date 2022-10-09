@@ -14,6 +14,14 @@ root.render(
   </React.StrictMode>
 );
 
+function changeImage(element) {
+
+  var main_prodcut_image = document.getElementById('main_product_image');
+  main_prodcut_image.src = element.src;
+  
+
+}
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
