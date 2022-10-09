@@ -8,3 +8,10 @@ ul .dropdown-menu.show{
 .btn-second{
     background-color: yellow;
 }
+
+.user_profile_btn{
+    margin-right:50px;
+    border: 8px; 
+    background-color: #fcc70e;
+    color: #1a1449;
+}

@@ -11,6 +11,7 @@ import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages";
 import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests";
 import { AdminDashboardQueries } from "./pages/dashboard/admin/pages/queries";
 import { AdminDashboardSettings } from "./pages/dashboard/admin/pages/settings";
+import { ProductOnePage } from "./pages/dashboard/admin/pages/products/productone";
 
 function App() {
   return (
@@ -18,11 +19,23 @@ function App() {
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/forgotPassword" element={<ForgotPassword/>} />
-        <Route path="/admin-dashboard">
+        <Route path="/admin-dashboard"> 
             <Route path={""} element={<AdminDashboard />} />
-            <Route path="products" element={<AdminDashboardProducts />} />
-            <Route path="orders" element={<AdminDashboardOrders />} />
-            <Route path="messages" element={<AdminDashboardMessages />} />
+            <Route path="products">
+              <Route path={""} element={<AdminDashboardProducts />} />
+              <Route path=":id" element={<ProductOnePage />} />
+            </Route>
+
+            <Route path="orders">
+              <Route path={""} element={<AdminDashboardOrders />} />
+              <Route path=":id" element={<ProductOnePage />} />
+            </Route>
+
+            <Route path="messages">
+              <Route path={""} element={<AdminDashboardMessages />} />
+              <Route path=":id" element={<ProductOnePage />} />
+            </Route>
+
             <Route path="requests" element={<AdminDashboardRequests />} />
             <Route path="queries" element={<AdminDashboardQueries />} />
             <Route path="settings" element={<AdminDashboardSettings />} />
