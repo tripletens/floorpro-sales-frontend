@@ -1,10 +1,8 @@
 import React from "react";
-import DashboardNavbar from "../../components/navbar";
-import { AdminSidebar } from "../../components/sidebar";
-// import styled from 'styled-components';
-import "./index.css";
+import DashboardNavbar from "../dashboard/admin/components/navbar";
+import { AdminSidebar } from "../dashboard/admin/components/sidebar";
 
-export const AdminDashboard = () => {
+export const Users = () => {
   return (
     <>
       <DashboardNavbar />
@@ -14,23 +12,15 @@ export const AdminDashboard = () => {
         </div>
         <div className="col-md-10 col-sm-0 col-lg-10 col-xs-0">
           <div className="container-fluid">
-            <div className="row gx-5 mx-3 mb-3">
-              <div className="col dashboard_analytics_box">Column</div>
-              <div className="col dashboard_analytics_box">Column</div>
-              <div className="col dashboard_analytics_box">Column</div>
-            </div>
+            <div className="row gx-5 mx-3 mb-3"></div>
           </div>
           <div className="container-fluid">
-            <div className="row gx-5 mx-3 my-3">
-              <div className="col dashboard_analytics_box">Column</div>
-              <div className="col dashboard_analytics_box">Column</div>
-              <div className="col dashboard_analytics_box">Column</div>
-            </div>
+            <div className="row gx-5 mx-3 my-3"></div>
           </div>
           <div className="container-fluid">
             <div className="row gx-5 mx-3 my-3 px-5">
               <div className="col">
-                <h2 className="DashboardOrderTitle my-3"> Recent Orders</h2>
+                <h2 className="DashboardOrderTitle my-3"> Users</h2>
                 <table
                   id="dashboard_order_table"
                   className="table table-striped table-centered"
@@ -39,10 +29,10 @@ export const AdminDashboard = () => {
                   <thead>
                     <tr>
                       <th>Name</th>
-                      <th>Order Id </th>
+                      <th>UserName </th>
                       <th>Email Address</th>
                       <th>Phone Number</th>
-                      <th>Delivery date</th>
+                      <th>Last Active</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -54,7 +44,7 @@ export const AdminDashboard = () => {
                       <td>51</td>
                       <td>2008-11-13</td>
                       <td>
-                      <a href="#" class="product-eye">
+                        <a href="#" class="product-eye">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -104,7 +94,7 @@ export const AdminDashboard = () => {
                       <td>29</td>
                       <td>2011-06-27</td>
                       <td>
-                      <a href="#" class="product-eye">
+                        <a href="#" class="product-eye">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -204,7 +194,7 @@ export const AdminDashboard = () => {
                       <td>51</td>
                       <td>2008-11-13</td>
                       <td>
-                      <a href="#" class="product-eye">
+                        <a href="#" class="product-eye">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -254,7 +244,7 @@ export const AdminDashboard = () => {
                       <td>29</td>
                       <td>2011-06-27</td>
                       <td>
-                      <a href="#" class="product-eye">
+                        <a href="#" class="product-eye">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -354,7 +344,7 @@ export const AdminDashboard = () => {
                       <td>51</td>
                       <td>2008-11-13</td>
                       <td>
-                      <a href="#" class="product-eye">
+                        <a href="#" class="product-eye">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -404,7 +394,7 @@ export const AdminDashboard = () => {
                       <td>29</td>
                       <td>2011-06-27</td>
                       <td>
-                      <a href="#" class="product-eye">
+                        <a href="#" class="product-eye">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"

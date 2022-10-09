@@ -34,6 +34,7 @@ export const AdminSidebar = () => {
           <div className="sidebar-menu-item">Requests</div>
           <div className="sidebar-menu-item">Queries</div>
           <div className="sidebar-menu-item">Settings</div>
+          <div className="sidebar-menu-item">Users</div>
         </div>
       </div>
     </>

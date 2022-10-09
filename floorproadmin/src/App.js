@@ -5,6 +5,8 @@ import { Login } from "./pages/login/login";
 import { AdminDashboard } from "./pages/dashboard/admin/pages/dashboard/index";
 import { ForgotPassword } from "./pages/ForgotPassword/index";
 import { Salesorder } from "./pages/dashboard/admin/pages/SalesOrder";
+import { ProductPage } from "./pages/product";
+import { Users } from "./pages/users";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
         <Route path="/salesorder" element={<Salesorder/>} />
+        <Route path="/ProductPage" element={<ProductPage/>} />
+        <Route path="/Users" element={<Users/>} />
       </Routes>
     </>
   );
