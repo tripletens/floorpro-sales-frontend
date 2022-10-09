@@ -23,6 +23,7 @@
   border-radius: 8px;
   color: #1a1449;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .sidebar-menu-item:hover {
@@ -39,4 +40,5 @@
   border: #fcc70e 2px solid;
   color: #fcc70e;
   cursor: pointer;
+  text-decoration: none;
 }
