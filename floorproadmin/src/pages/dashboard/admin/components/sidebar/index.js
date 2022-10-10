@@ -49,6 +49,9 @@ export const AdminSidebar = () => {
           <a href={"/admin-dashboard/settings"} className="sidebar-menu-item">
             Settings
           </a>
+          <a href={"/admin-dashboard/users"} className="sidebar-menu-item">
+            Users
+          </a>
         </div>
       </div>
     </>

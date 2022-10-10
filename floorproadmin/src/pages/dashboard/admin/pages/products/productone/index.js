@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardNavbar from "../../../components/navbar";
 import { AdminSidebar } from "../../../components/sidebar";
+import { ProductEdit, ProductPage } from "../productedit";
 
 export const ProductOnePage = () => {
   return (
@@ -15,6 +16,7 @@ export const ProductOnePage = () => {
             <div className="row gx-5 mx-3 my-3 px-5">
               <div className="col">
                 <h2 className="DashboardOrderTitle my-3"> Product Details</h2>
+                <ProductEdit/>
               </div>
             </div>
           </div>
