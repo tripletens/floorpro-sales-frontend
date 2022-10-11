@@ -46,7 +46,7 @@ export const AdminDashboardUsers = () => {
                       <td>51</td>
                       <td>2008-11-13</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -84,7 +84,7 @@ export const AdminDashboardUsers = () => {
                       <td>29</td>
                       <td>2011-06-27</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -122,7 +122,7 @@ export const AdminDashboardUsers = () => {
                       <td>27</td>
                       <td>2011-01-25</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -160,7 +160,7 @@ export const AdminDashboardUsers = () => {
                       <td>51</td>
                       <td>2008-11-13</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -198,7 +198,7 @@ export const AdminDashboardUsers = () => {
                       <td>29</td>
                       <td>2011-06-27</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -236,7 +236,7 @@ export const AdminDashboardUsers = () => {
                       <td>27</td>
                       <td>2011-01-25</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -274,7 +274,7 @@ export const AdminDashboardUsers = () => {
                       <td>51</td>
                       <td>2008-11-13</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -312,7 +312,7 @@ export const AdminDashboardUsers = () => {
                       <td>29</td>
                       <td>2011-06-27</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/1'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -350,7 +350,7 @@ export const AdminDashboardUsers = () => {
                       <td>27</td>
                       <td>2011-01-25</td>
                       <td>
-                      <Link to={'/AdminDashboardUsers/UserDetails/'} className="eye-view">
+                      <Link to={'/admin-dashboard/users/1'} className="eye-view">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"

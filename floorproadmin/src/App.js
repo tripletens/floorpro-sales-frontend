@@ -14,7 +14,7 @@ import { AdminDashboardSettings } from "./pages/dashboard/admin/pages/settings";
 import { ProductOnePage } from "./pages/dashboard/admin/pages/products/productone";
 import { ProductEdit } from "./pages/dashboard/admin/pages/products/productedit";
 import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users";
-import { UserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
+import { AdminDashboardUserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
 
 function App() {
   return (
@@ -44,9 +44,9 @@ function App() {
               <Route path=":id" element={<ProductEdit/>} />
             </Route>
 
-            <Route path="userdetails">
-              <Route path={""} element={<UserDetails />} />
-              <Route path=":id" element={<UserDetails/>} />
+            <Route path="users">
+              <Route path={""} element={<AdminDashboardUsers />} />
+              <Route path=":id" element={<AdminDashboardUserDetails/>} />
             </Route>
 
 
