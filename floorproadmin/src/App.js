@@ -5,6 +5,9 @@ import { Login } from "./pages/login/login";
 import { AdminDashboard } from "./pages/dashboard/admin/pages/dashboard/index";
 import { ForgotPassword } from "./pages/ForgotPassword/index";
 import { Salesorder } from "./pages/dashboard/admin/pages/SalesOrder";
+
+import { ProductPage } from "./pages/product";
+import { Users } from "./pages/users";
 import { AdminDashboardProducts } from "./pages/dashboard/admin/pages/products";
 import { AdminDashboardOrders } from "./pages/dashboard/admin/pages/orders";
 import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages";
@@ -56,6 +59,8 @@ function App() {
             <Route path="users" element={<AdminDashboardUsers/>} />
         </Route>
         <Route path="/salesorder" element={<Salesorder/>} />
+        <Route path="/ProductPage" element={<ProductPage/>} />
+        <Route path="/Users" element={<Users/>} />
       </Routes>
     </>
   );
