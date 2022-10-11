@@ -14,7 +14,7 @@ export const AdminSidebar = () => {
         }}
       >
         <div className="sidebar-menu">
-        <a href={"/admin-dashboard"} className="sidebar-menu-item">
+          <a href={"/admin-dashboard"} className="sidebar-menu-item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -29,12 +29,13 @@ export const AdminSidebar = () => {
               />
             </svg>{" "}
             Dashboard
-            
+          </a>
+
           <a href={"/admin-dashboard/orders"} className="sidebar-menu-item">
             Sales Orders
           </a>
           <a href={"/admin-dashboard/products"} className="sidebar-menu-item">
-              Products
+            Products
           </a>
           <a href={"/admin-dashboard/messages"} className="sidebar-menu-item">
             Message
