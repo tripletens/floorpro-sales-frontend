@@ -24,7 +24,7 @@ export const Salesorder = () => {
             <div className="col-md-4 col-sm-12 col-xs-12 dashboard_details_boxs"></div>
           </div>
           <div className="row gx-2">
-            <table class="table table-bordered details_box">
+            <table className="table table-bordered details_box">
               <thead>
                 <tr>
                   <th scope="col">#</th>

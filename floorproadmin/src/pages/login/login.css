@@ -23,11 +23,13 @@
   background-color: rgba(26, 20, 73);
   border-radius: 8px;
   border: none;
-  padding: auto;
-  width: 60px;
-  height: 30px;
+  padding: 20px;
+  width: 100%;
+  /* height: auto; */
   text-align: center;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-btn:hover {
@@ -35,4 +37,14 @@
   color: rgba(26, 20, 73);
   border: 2px solid rgba(26, 20, 73);
   border-radius: 8px;
+}
+
+.loginloader{
+  color: #fcc70e;
+  width: 20px;
+  height: 20px;
+}
+
+.login_password_alert{
+  color: red;
 }

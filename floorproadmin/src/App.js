@@ -18,14 +18,28 @@ import { ProductOnePage } from "./pages/dashboard/admin/pages/products/producton
 import { ProductEdit } from "./pages/dashboard/admin/pages/products/productedit";
 import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users";
 import { AdminDashboardUserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
+import { useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 function App() {
+  const ProtectedRoute = ({ redirectPath = "/" }) => {
+    const token = useSelector((state) => state.auth.token);
+    const access_token = sessionStorage.getItem('access_token') ? sessionStorage.getItem('access_token') : null;
+
+    if (!token && !access_token) {
+      return <Navigate to={redirectPath} replace={true} />;
+    }
+
+    return <Outlet />;
+  };
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login/>} />
-        <Route path="/forgotPassword" element={<ForgotPassword/>} />
-        <Route path="/admin-dashboard"> 
+        <Route path="/" element={<Login />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/admin-dashboard">
             <Route path={""} element={<AdminDashboard />} />
             <Route path="products">
               <Route path={""} element={<AdminDashboardProducts />} />
@@ -44,24 +58,25 @@ function App() {
 
             <Route path="products">
               <Route path={""} element={<ProductEdit />} />
-              <Route path=":id" element={<ProductEdit/>} />
+              <Route path=":id" element={<ProductEdit />} />
             </Route>
 
             <Route path="users">
               <Route path={""} element={<AdminDashboardUsers />} />
-              <Route path=":id" element={<AdminDashboardUserDetails/>} />
+              <Route path=":id" element={<AdminDashboardUserDetails />} />
             </Route>
-
 
             <Route path="requests" element={<AdminDashboardRequests />} />
             <Route path="queries" element={<AdminDashboardQueries />} />
             <Route path="settings" element={<AdminDashboardSettings />} />
-            <Route path="users" element={<AdminDashboardUsers/>} />
+            <Route path="users" element={<AdminDashboardUsers />} />
+          </Route>
+          <Route path="/salesorder" element={<Salesorder />} />
+          <Route path="/ProductPage" element={<ProductPage />} />
+          <Route path="/Users" element={<Users />} />
         </Route>
-        <Route path="/salesorder" element={<Salesorder/>} />
-        <Route path="/ProductPage" element={<ProductPage/>} />
-        <Route path="/Users" element={<Users/>} />
       </Routes>
+      <ToastContainer/>
     </>
   );
 }

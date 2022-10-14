@@ -1,8 +1,32 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "../../../../../assets/images/logo.png";
+import { ucwords } from "../../../../../helpers";
+import { logout } from "../../../../../store/auth";
 import "./index.css";
 
 const DashboardNavbar = () => {
+  const user_data = sessionStorage.getItem("user_data") ? JSON.parse(sessionStorage.getItem("user_data")) : null;
+  
+  console.log({user_data});
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
+
+  const userlogout = () => {
+    // fetch the dispatch  for logout
+
+    try {
+      dispatch(logout());
+      navigate("/admin-dashboard", { replace: true });
+    } catch (error) {
+      console.log(error);
+      return toast.error(`${error}!`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,13 +71,19 @@ const DashboardNavbar = () => {
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <li>
                     <a className="dropdown-item" href="#">
-                      John Doe
+                      {user_data ? ucwords(user_data.name) : "loading..."}
                     </a>
                   </li>
+                  
                   <li>
                     <a className="dropdown-item" href="#">
                      Settings
                     </a>
+                  </li>
+                  <li>
+                    <Link onClick={userlogout} className="dropdown-item" to={"/"}>
+                      Logout
+                    </Link>
                   </li>
                 </ul>
               </div>
