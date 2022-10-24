@@ -20,6 +20,9 @@ import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users";
 import { AdminDashboardUserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
+import { CategoryEdit } from "./pages/dashboard/admin/pages/category/categoryedit";
+import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
+import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
 
 function App() {
   const ProtectedRoute = ({ redirectPath = "/" }) => {
@@ -59,6 +62,11 @@ function App() {
             <Route path="products">
               <Route path={""} element={<ProductEdit />} />
               <Route path=":id" element={<ProductEdit />} />
+            </Route>
+
+            <Route path="category">
+              <Route path={""} element={<AdminDashboardCategory />} />
+              <Route path=":id" element={<CategoryOnePage />} />
             </Route>
 
             <Route path="users">
