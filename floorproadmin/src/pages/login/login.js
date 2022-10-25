@@ -57,6 +57,13 @@ export const Login = () => {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
+
+        if (e.data && e.data.status === "FETCH_ERROR") {
+          console.log("Login Error");
+          return toast.error(`Please connect to the internet to contine!`, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
         console.log("error", e);
       });
   };
