@@ -23,6 +23,7 @@ import { ToastContainer } from "react-toastify";
 import { CategoryEdit } from "./pages/dashboard/admin/pages/category/categoryedit";
 import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
+import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategories";
 
 function App() {
   const ProtectedRoute = ({ redirectPath = "/" }) => {
@@ -67,6 +68,11 @@ function App() {
             <Route path="category">
               <Route path={""} element={<AdminDashboardCategory />} />
               <Route path=":id" element={<CategoryOnePage />} />
+            </Route>
+
+            <Route path="addcategory">
+            <Route path={""} element={<AdminDashboardCategory />} />
+            <Route path=":id" element={<AddCategoryPage/>}/>
             </Route>
 
             <Route path="users">

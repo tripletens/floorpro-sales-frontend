@@ -37,31 +37,9 @@ export const AdminSidebar = () => {
           <a href={"/admin-dashboard/products"} className="sidebar-menu-item">
             Products
           </a>
-          <div class="sidebar-menu-item">
-            <a
-              class="btn  sidebar-menu-item dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <a href={"/admin-dashboard/category"} className=" sidebar-menu-item " >
               Category
             </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href={"/admin-dashboard/category"}>
-                Category
-              </a>
-              <a class="dropdown-item" href="#">
-                Another action
-              </a>
-              <a class="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </div>
           <a href={"/admin-dashboard/messages"} className="sidebar-menu-item">
             Message
           </a>
