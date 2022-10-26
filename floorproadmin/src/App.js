@@ -23,11 +23,14 @@ import { ToastContainer } from "react-toastify";
 import { CategoryEdit } from "./pages/dashboard/admin/pages/category/categoryedit";
 import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
+import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/categoryone copy";
 
 function App() {
   const ProtectedRoute = ({ redirectPath = "/" }) => {
     const token = useSelector((state) => state.auth.token);
-    const access_token = sessionStorage.getItem('access_token') ? sessionStorage.getItem('access_token') : null;
+    const access_token = sessionStorage.getItem("access_token")
+      ? sessionStorage.getItem("access_token")
+      : null;
 
     if (!token && !access_token) {
       return <Navigate to={redirectPath} replace={true} />;
@@ -69,6 +72,11 @@ function App() {
               <Route path=":id" element={<CategoryOnePage />} />
             </Route>
 
+            <Route path="addcategory">
+              <Route path={""} element={<AdminDashboardCategory />} />
+              <Route path=":id" element={<AddCategoryPage />} />
+            </Route>
+
             <Route path="users">
               <Route path={""} element={<AdminDashboardUsers />} />
               <Route path=":id" element={<AdminDashboardUserDetails />} />
@@ -84,7 +92,7 @@ function App() {
           <Route path="/Users" element={<Users />} />
         </Route>
       </Routes>
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 }
