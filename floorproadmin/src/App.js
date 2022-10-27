@@ -23,7 +23,7 @@ import { ToastContainer } from "react-toastify";
 import { CategoryEdit } from "./pages/dashboard/admin/pages/category/categoryedit";
 import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
-import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/categoryone copy";
+import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
 
 function App() {
   const ProtectedRoute = ({ redirectPath = "/" }) => {
