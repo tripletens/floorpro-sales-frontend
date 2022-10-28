@@ -14,16 +14,20 @@ export const AddCategoryPage = () => {
         <div className="col-md-10 col-sm-0 col-lg-10 col-xs-0">
           <div className="container-fluid">
             <div className="row gx-5 mx-3 my-3 px-5">
-            
-                <div className="container-xxl">
+              <div className="container-xxl">
                 <div class="row align-items-center">
-                        <div class="border-0 mb-4">
-                            <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                                <h3 class="fw-bold mb-0">Categories Add</h3>
-                                <button type="submit" class="btn btn-primary py-2 px-5 text-uppercase btn-set-task w-sm-100">Save</button>
-                            </div>
-                        </div>
+                  <div class="border-0 mb-4">
+                    <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                      <h3 class="fw-bold mb-0">Categories Add</h3>
+                      <button
+                        type="submit"
+                        class="btn btn-primary py-2 px-5 text-uppercase btn-set-task w-sm-100"
+                      >
+                        Save
+                      </button>
                     </div>
+                  </div>
+                </div>
                 <div className="row g-3 mb-3">
                   <div class="col-lg-4">
                     <div class="sticky-lg-top">
@@ -115,44 +119,57 @@ export const AddCategoryPage = () => {
                             />
                           </div>
                         </div>
-                      
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-8">
-                        <div class="card mb-3">
-                                <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                    <h6 class="mb-0 fw-bold ">Basic information</h6>
-                                </div>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="row g-3 align-items-center">
-                                            <div class="col-md-6">
-                                                <label class="form-label">Name</label>
-                                                <input type="text" class="form-control"/>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label class="form-label">Page Title</label>
-                                                <input type="text" class="form-control"/>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label class="form-label">Product Identifier URL</label>
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text">https://eBazar.com</span>
-                                                    <input type="text" class="form-control"/>
-                                                </div>
-                                            </div>
-                                           
-                                        </div>
-                                    </form>
-                                </div>
+                    <div class="card mb-3">
+                      <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+                        <h6 class="mb-0 fw-bold ">Basic information</h6>
+                      </div>
+                      <div class="card-body">
+                        <form>
+                          <div class="row g-3 align-items-center">
+                            <div class="col-md-6">
+                              <label class="form-label">Name</label>
+                              <input type="text" class="form-control" />
                             </div>
-                        </div>
-                </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Page Title</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-md-12">
+                              <label class="form-label">
+                                Product Identifier URL
+                              </label>
+                              <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                  https://eBazar.com
+                                </span>
+                                <input type="text" class="form-control" />
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <label class="form-label">
+                                Product Description
+                              </label>
+                              <textarea
+                                  class="form-control"
+                                  id="exampleFormControlTextarea1"
+                                  rows="3"
+                                ></textarea>
+                            </div>
+                            
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
     </>
   );

@@ -24,6 +24,7 @@ import { CategoryEdit } from "./pages/dashboard/admin/pages/category/categoryedi
 import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
 import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
+import { AddProductPage } from "./pages/dashboard/admin/pages/products/addproduct";
 
 function App() {
   const ProtectedRoute = ({ redirectPath = "/" }) => {
@@ -50,6 +51,11 @@ function App() {
             <Route path="products">
               <Route path={""} element={<AdminDashboardProducts />} />
               <Route path=":id" element={<ProductOnePage />} />
+            </Route>
+
+            <Route path="addproduct">
+            <Route path={""} element={<AdminDashboardProducts />} />
+            <Route path=":id" element={<AddProductPage />} />
             </Route>
 
             <Route path="orders">
