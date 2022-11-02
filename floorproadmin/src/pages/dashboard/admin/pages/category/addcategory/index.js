@@ -1,7 +1,6 @@
 import React from "react";
 import DashboardNavbar from "../../../components/navbar";
 import { AdminSidebar } from "../../../components/sidebar";
-import { CategoryEdit } from "../categoryedit";
 
 export const AddCategoryPage = () => {
   return (
