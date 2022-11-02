@@ -17,7 +17,7 @@ export const AllProductsTable = () => {
     data: fetchproductsData,
   } = useFetchAllProductsQuery();
 
-  console.log({ fetchproductsData });
+  // console.log({ fetchproductsData });
 
   useEffect(() => {
     if (fetchproductsData && fetchproductsData.data) {
