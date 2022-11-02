@@ -15,7 +15,7 @@ import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests";
 import { AdminDashboardQueries } from "./pages/dashboard/admin/pages/queries";
 import { AdminDashboardSettings } from "./pages/dashboard/admin/pages/settings";
 import { ProductOnePage } from "./pages/dashboard/admin/pages/products/productone";
-import { ProductEdit } from "./pages/dashboard/admin/pages/products/productedit";
+import { ProductDetails } from "./pages/dashboard/admin/pages/products/productdetails";
 import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users";
 import { AdminDashboardUserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
 import { useSelector } from "react-redux";
@@ -23,8 +23,8 @@ import { ToastContainer } from "react-toastify";
 import { CategoryEdit } from "./pages/dashboard/admin/pages/category/categoryedit";
 import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
-import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
-import { AddProductPage } from "./pages/dashboard/admin/pages/products/addproduct";
+import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/categoryone copy";
+import ProductAdd from "./pages/dashboard/admin/pages/products/productadd";
 
 function App() {
   const ProtectedRoute = ({ redirectPath = "/" }) => {
@@ -53,12 +53,7 @@ function App() {
               <Route path=":id" element={<ProductOnePage />} />
             </Route>
 
-            <Route path="addproduct">
-            <Route path={""} element={<AdminDashboardProducts />} />
-            <Route path=":id" element={<AddProductPage />} />
-            </Route>
-
-            <Route path="orders">
+            <Route path="orders"> 
               <Route path={""} element={<AdminDashboardOrders />} />
               <Route path=":id" element={<ProductOnePage />} />
             </Route>
@@ -69,18 +64,15 @@ function App() {
             </Route>
 
             <Route path="products">
-              <Route path={""} element={<ProductEdit />} />
-              <Route path=":id" element={<ProductEdit />} />
+              <Route path={""} element={<AdminDashboardProducts />} />
+              <Route path=":id" element={<ProductDetails />} />
+              <Route path={"add"} element={<ProductAdd />} />
             </Route>
 
-            <Route path="category">
+            <Route path="category"> 
               <Route path={""} element={<AdminDashboardCategory />} />
               <Route path=":id" element={<CategoryOnePage />} />
-            </Route>
-
-            <Route path="addcategory">
-              <Route path={""} element={<AdminDashboardCategory />} />
-              <Route path=":id" element={<AddCategoryPage />} />
+              <Route path="add" element={<AddCategoryPage />} />
             </Route>
 
             <Route path="users">

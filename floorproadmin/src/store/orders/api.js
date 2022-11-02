@@ -43,6 +43,13 @@ export const orderApi = createApi({
         method: "GET",
       }),
     }),
+
+    fetchAllOrders: builder.query({
+      query: () => ({
+        url: "all_orders",
+        method: "GET",
+      }),
+    }),
     
   }),
 });
@@ -51,4 +58,5 @@ export const orderApi = createApi({
 // auto-generated based on the defined endpoints
 export const { 
   useFetchRecentOrdersQuery, 
+  useFetchAllOrdersQuery
 } = orderApi;
