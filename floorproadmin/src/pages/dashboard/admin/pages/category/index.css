@@ -27,3 +27,9 @@
   text-decoration: none;
 }
 
+.add-btn {
+  color: #1a1449;
+  background-color: #fcc70e;
+  border: 0;
+  border-radius: 8px;
+}
