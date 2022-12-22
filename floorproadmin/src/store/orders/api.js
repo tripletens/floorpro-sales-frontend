@@ -50,6 +50,19 @@ export const orderApi = createApi({
         method: "GET",
       }),
     }),
+
+    fetchOrderByRef: builder.query({
+      query: (ref) => ({
+        url: `orders/${ref}`,
+        method: "GET",
+      }),
+    }),
+    DeleteOrdersByRef: builder.query({
+      query: (ref) => ({
+        url: `delete_order/${ref}`,
+        method: "DELETE",
+      }),
+    }),
     
   }),
 });
@@ -58,5 +71,7 @@ export const orderApi = createApi({
 // auto-generated based on the defined endpoints
 export const { 
   useFetchRecentOrdersQuery, 
-  useFetchAllOrdersQuery
+  useFetchAllOrdersQuery,
+  useDeleteOrderQuery,
+  useFetchOrderByRefQuery,
 } = orderApi;
