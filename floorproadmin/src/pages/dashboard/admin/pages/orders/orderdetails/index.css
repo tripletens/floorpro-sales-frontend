@@ -1,0 +1,10 @@
+
+
+.add-btn {
+  float: right;
+  justify-content: flex-end;
+  color: #1a1449;
+  background-color: #fcc70e;
+  border: 0;
+  border-radius: 8px;
+}

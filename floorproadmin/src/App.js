@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import "./pages/dashboard/admin/components/FontAwesomeIcon";
 import "./App.css";
 import { Routes, Route, Link, Outlet, Navigate } from "react-router-dom";
 import { Login } from "./pages/login/login";
@@ -20,10 +21,14 @@ import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users";
 import { AdminDashboardUserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import { CategoryOnePage } from "./pages/dashboard/admin/pages/category/categoryone";
+import { CategoryOnePage} from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
 import ProductAdd from "./pages/dashboard/admin/pages/products/productadd";
 import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
+import { AddOrderPage } from "./pages/dashboard/admin/pages/orders/addorder";
+import { OrderPage } from "./pages/dashboard/admin/pages/orders/orderdetails";
+
+
 
 
 function App() {
@@ -55,7 +60,8 @@ function App() {
 
             <Route path="orders"> 
               <Route path={""} element={<AdminDashboardOrders />} />
-              <Route path=":id" element={<ProductOnePage />} />
+              <Route path=":ref" element={<OrderPage />} />
+              <Route path="add" element={<AddOrderPage />} />
             </Route>
 
             <Route path="messages">

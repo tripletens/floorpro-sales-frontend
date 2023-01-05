@@ -39,3 +39,44 @@ set-btn {
   margin-right: calc(-.5 * var(--bs-gutter-x));
   margin-left: calc(-.5 * var(--bs-gutter-x));
 }
+
+.card {
+  border: 1px dashed #e8e5dd;
+  box-shadow: none;
+}
+.mb-5 {
+  margin-bottom: 1.25rem!important;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgba(248,246,242,.3);
+  background-clip: border-box;
+  border: 1px solid #e8e5dd;
+  border-radius: 0.95rem;
+}
+
+.flex-fill {
+  /* float: right;
+  justify-content: flex-end;
+  color: #1a1449;
+  background-color: #fcc70e;
+  border: 0;
+  border-radius: 8px; */
+}
+
+.save-changes {
+  float: right;
+  justify-content: flex-end;
+  color: #1a1449;
+  background-color: #fcc70e;
+  border: 0;
+  border-radius: 8px;
+}
+
+.nav-pillss {
+  background-color: #fcc70e !important;
+}

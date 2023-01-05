@@ -25,10 +25,8 @@ export const AdminDashboardOrders = () => {
                       {/* <!-- Table with toolbar --> */}
                       <div class="card">
                         <div class="card-header">
-                          <h5 class="card-title mb-3">  All Orders </h5>
-                          <div class="row">
-                            
-                          </div>
+                          <h5 class="card-title mb-3">Order Status</h5>
+                          
                         </div>
                         <AllOrderTable/>
                       </div>
