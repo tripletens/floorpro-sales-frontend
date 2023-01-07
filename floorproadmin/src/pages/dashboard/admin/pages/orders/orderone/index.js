@@ -23,8 +23,6 @@ export const OrderOne = () => {
     data: fetchOrderByRefData,
   } = useFetchOrderByRefQuery(orderRef);
 
-  console.log("order details",{fetchOrderByRefData})
-
   const {
     isLoading: DeleteOrderByRefIsLoading,
     isError: DeleteOrderByRefIsError,
@@ -37,7 +35,6 @@ export const OrderOne = () => {
       setOrderDetails(fetchOrderByRefData.data);
     }
   }, [orderDetails]);
-  
   console.log({ orderDetails });
 
   const DeleteOrder = () => {
@@ -279,7 +276,7 @@ export const OrderOne = () => {
                                         {/* category_name product_description product_img_url
                             product_name product_price product_quantity
                             product_square_meter product_status */}
-                                        <tr key={key}>
+                                        <tr>
                                           <td>
                                             <a href="#">
                                               <img
