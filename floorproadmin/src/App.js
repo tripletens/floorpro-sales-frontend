@@ -13,7 +13,6 @@ import { AdminDashboardProducts } from "./pages/dashboard/admin/pages/products";
 import { AdminDashboardOrders } from "./pages/dashboard/admin/pages/orders";
 import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages";
 import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests";
-import { AdminDashboardQueries } from "./pages/dashboard/admin/pages/queries";
 import { AdminDashboardSettings } from "./pages/dashboard/admin/pages/settings";
 import { ProductOnePage } from "./pages/dashboard/admin/pages/products/productone";
 import { ProductDetails } from "./pages/dashboard/admin/pages/products/productdetails";
@@ -27,6 +26,8 @@ import ProductAdd from "./pages/dashboard/admin/pages/products/productadd";
 import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
 import { AddOrderPage } from "./pages/dashboard/admin/pages/orders/addorder";
 import { OrderPage } from "./pages/dashboard/admin/pages/orders/orderdetails";
+import { MessagesReply } from "./pages/dashboard/admin/pages/messages/messagereply";
+import { AdminDashboardAppointment } from "./pages/dashboard/admin/pages/appointment";
 
 
 
@@ -66,7 +67,8 @@ function App() {
 
             <Route path="messages">
               <Route path={""} element={<AdminDashboardMessages />} />
-              <Route path=":id" element={<ProductOnePage />} />
+              <Route path=":id" element={<MessagesReply />} />
+              
             </Route>
 
             <Route path="products">
@@ -87,7 +89,7 @@ function App() {
             </Route>
 
             <Route path="requests" element={<AdminDashboardRequests />} />
-            <Route path="queries" element={<AdminDashboardQueries />} />
+            <Route path="appointment" element={<AdminDashboardAppointment />} />
             <Route path="settings" element={<AdminDashboardSettings />} />
             <Route path="users" element={<AdminDashboardUsers />} />
           </Route>

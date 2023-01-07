@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL, API_LOCAL_URL } from "../../config";
 // import { useDispatch, useSelector } from "react-redux";
 
 // const token = useSelector((state) => state.auth.token);
 // Define a service using a base URL and expected endpoints
-export const orderApi = createApi({
-  reducerPath: "orderApi",
+export const appointmentApi = createApi({
+  reducerPath: "appointmentApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: API_BASE_URL,
+    baseUrl: API_LOCAL_URL,
     prepareHeaders: (headers, { getState }) => {
       // By default, if we have a token in the store, let's use that for authenticated requests
       const access_token = sessionStorage.getItem("access_token") ? sessionStorage.getItem("access_token") : null;
@@ -37,42 +37,19 @@ export const orderApi = createApi({
     //   }),
     // }),
     
-    fetchRecentOrders: builder.query({
+    fetchAllAppointment: builder.query({
       query: () => ({
-        url: "recent_orders",
+        url: "all_appointments",
         method: "GET",
       }),
     }),
 
-    fetchAllOrders: builder.query({
-      query: () => ({
-        url: "all_orders",
-        method: "GET",
-      }),
-    }),
-
-    fetchOrderByRef: builder.query({
-      query: (ref) => ({
-        url: `orders/${ref}`,
-        method: "GET",
-      }),
-    }),
-    DeleteOrdersByRef: builder.query({
-      query: (ref) => ({
-        url: `delete_order/${ref}`,
-        method: "DELETE",
-      }),
-    }),
-    
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { 
-  useFetchRecentOrdersQuery, 
-  useFetchAllOrdersQuery,
-  
-  useDeleteOrderQuery,
-  useFetchOrderByRefQuery,
-} = orderApi;
+  useFetchAllAppointmentQuery,
+ 
+} = appointmentApi;

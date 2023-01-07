@@ -69,7 +69,7 @@ export const AllProductsTable = () => {
     },
     {
       name: "Date Added",
-      selector: (row) => formatDate(row.products_created_at),
+      selector: (row) => get_current_day_and_time(row.products_created_at),
       sortable: true,
     },
     {

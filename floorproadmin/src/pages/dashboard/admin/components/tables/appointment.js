@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { useFetchRecentOrdersQuery } from "../../../../../store/orders/api";
+import {
+  currency_formatter,
+  formatDate,
+  format_calendar_date,
+  get_current_day_and_time,
+} from "../../../../../helpers";
+
 import DataTable from "react-data-table-component";
-import { get_current_day_and_time } from "../../../../../helpers";
+import { Link } from "react-router-dom";
+import { useFetchAllAppointmentQuery } from "../../../../../store/appointment/api";
 
-export const RecentOrderTable = () => {
-  const [recentOrders, setRecentOrders] = useState([]);
+export const AppointmentTable = () => {
+  const [products, setproducts] = useState([]);
   const {
-    isLoading: fetchRecentOrdersIsLoading,
-    isError: fetchRecentOrdersIsError,
-    error: fetchRecentOrdersError,
-    data: fetchRecentOrdersData,
-  } = useFetchRecentOrdersQuery();
+    isLoading: fetchappointmentIsLoading,
+    isError: fetchappointmentIsError,
+    error: fetchappointmentError,
+    data: fetchappointmentData,
+  } = useFetchAllAppointmentQuery();
 
-  console.log({fetchRecentOrdersData});
+  console.log({ fetchappointmentData });
 
   useEffect(() => {
-    if (fetchRecentOrdersData && fetchRecentOrdersData.data) {
-      setRecentOrders(fetchRecentOrdersData.data);
-      console.log(recentOrders);
+    if (fetchappointmentData && fetchappointmentData.data) {
+      setproducts(fetchappointmentData.data);
     }
-  }, [recentOrders]);
+  }, [products]);
+
 
   function getNumberOfPages(rowCount, rowsPerPage) {
     return Math.ceil(rowCount / rowsPerPage);
@@ -37,61 +44,70 @@ export const RecentOrderTable = () => {
 
   const columns = [
     {
-      name: "Order Ref.",
-      selector: (row) => row.ref,
+      name: "First Name",
+      selector: (row) => row.first_name,
+      cell: (row) => (
+        row.first_name ? row.first_name : "N/A"
+      ),
       sortable: true,
     },
     {
-      name: "Full Name",
-      selector: (row) => row.first_name + " " + row.last_name,  
+        name: "Last Name",
+        selector: (row) => row.last_name,
+        cell: (row) => (
+            row.last_name ? row.last_name : "N/A"
+        ),
+        sortable: true,
+      },
+
+        {
+      name: "Phone",
+      selector: (row) => row.phone,
+      cell: (row) => (
+        row.phone ? row.phone : "N/A"
+      ),
       sortable: true,
     },
+ 
     
     {
-      name: "Phone",
-      selector: (row) => row.phone ?? "N/A",
+      name: "Email",
+      selector: (row) => row.email,
+      cell: (row) => (
+        row.email ? row.email : "N/A"
+      ),
       sortable: true,
     },
+
+       
     {
-      name: "Quantity",
-      selector: (row) => row.quantity ?? "N/A" ,
-      sortable: true,
-    },
+        name: "Time",
+        selector: (row) => row.time,
+        cell: (row) => (
+          row.time ? row.time : "N/A"
+        ),
+        sortable: true,
+      },
+
     {
-      name: "Total Price",
-      selector: (row) => row.total_price ?? "N/A",
-      sortable: true,
-    },
-    {
-      name: "Status",
-      selector: (row) => row.status ?? "0",
-      sortable: true,
-    },
-    {
-      name: "Date",
+      name: "Date Added",
       selector: (row) => get_current_day_and_time(row.created_at),
       sortable: true,
     },
+
     {
-      name: "",
-      button: true,
-      selector: (row) => row.id,
-      cell: (row) => (
-        <a href={`orders/${row.id}`} className="product-eye">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          className="bi bi-eye"
-          viewBox="0 0 16 16"
-        >
-          <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-          <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-        </svg>
-      </a>
-      )
-    }
+        name: "Status",
+        selector: (row) => row.status,
+        cell: (row) =>
+        row.status == 1 ? (
+          <span class="badge bg-success">Active</span>
+        ) : (
+          <span class="badge bg-danger">Inactive</span>
+        ),
+        sortable: true,
+  
+      },
+
   ];
 
   // RDT exposes the following internal pagination properties
@@ -180,12 +196,12 @@ export const RecentOrderTable = () => {
   ));
 
   return (
-    <>  
+    <>
       <DataTable
         columns={columns}
         data={
-          fetchRecentOrdersData && fetchRecentOrdersData.data
-            ? fetchRecentOrdersData.data
+          fetchappointmentData && fetchappointmentData.data
+            ? fetchappointmentData.data
             : []
         }
         defaultSortFieldID={1}

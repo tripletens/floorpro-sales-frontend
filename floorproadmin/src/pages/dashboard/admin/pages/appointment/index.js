@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../../../../helpers";
-import { useFetchCategoriesQuery } from "../../../../../store/category/api";
 import DashboardNavbar from "../../components/navbar";
 import { AdminSidebar } from "../../components/sidebar";
-import { MessageTable } from "../../components/tables/message";
+import { AppointmentTable } from "../../components/tables/appointment";
 // import styled from 'styled-components';
 import "./index.css";
 
-export const AdminDashboardMessages = () => {
+export const AdminDashboardAppointment = () => {
   return (
     <>
       <DashboardNavbar />
@@ -27,10 +26,10 @@ export const AdminDashboardMessages = () => {
                       {/* <!-- Table with toolbar --> */}
                       <div class="card">
                         <div class="card-header">
-                          <h5 class="card-title mb-3">All messages</h5>
+                          <h5 class="card-title mb-3">Appointment</h5>
                           
                         </div>
-                        <MessageTable/>
+                        <AppointmentTable/>
                       </div>
                     </div>
                   </div>
