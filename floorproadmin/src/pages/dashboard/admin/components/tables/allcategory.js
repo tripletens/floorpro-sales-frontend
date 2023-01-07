@@ -61,6 +61,12 @@ export const AllCategoryTable = () => {
     {
       name: "Status",
       selector: (row) => row.status,
+      cell: (row) =>
+        row.status == 1 ? (
+          <span class="badge bg-success">Active</span>
+        ) : (
+          <span class="badge bg-danger">Inactive</span>
+        ),
       sortable: true,
     },
 
