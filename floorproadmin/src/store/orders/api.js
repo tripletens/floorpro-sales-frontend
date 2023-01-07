@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL, API_LOCAL_URL } from "../../config";
 // import { useDispatch, useSelector } from "react-redux";
 
 // const token = useSelector((state) => state.auth.token);
@@ -7,7 +7,7 @@ import { API_BASE_URL } from "../../config";
 export const orderApi = createApi({
   reducerPath: "orderApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: API_BASE_URL,
+    baseUrl: API_LOCAL_URL,
     prepareHeaders: (headers, { getState }) => {
       // By default, if we have a token in the store, let's use that for authenticated requests
       const access_token = sessionStorage.getItem("access_token") ? sessionStorage.getItem("access_token") : null;
@@ -63,7 +63,6 @@ export const orderApi = createApi({
         method: "DELETE",
       }),
     }),
-    
   }),
 });
 
@@ -72,6 +71,6 @@ export const orderApi = createApi({
 export const { 
   useFetchRecentOrdersQuery, 
   useFetchAllOrdersQuery,
-  useDeleteOrderQuery,
+  useDeleteOrdersByRefQuery,
   useFetchOrderByRefQuery,
 } = orderApi;

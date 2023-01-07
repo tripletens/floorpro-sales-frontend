@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DashboardNavbar from "../../components/navbar";
 import { AdminSidebar } from "../../components/sidebar";
+import { AllProductsTable } from "../../components/tables/allproducts";
 import "./index.css";
 
 export const AdminDashboardUsers = () => {
@@ -14,115 +15,30 @@ export const AdminDashboardUsers = () => {
         </div>
         <div className="col-md-10 col-sm-0 col-lg-10 col-xs-0">
           <div className="container-fluid">
-            <div className="row gx-5 mx-3 mb-3"></div>
-          </div>
-          <div className="container-fluid">
-            <div className="row gx-5 mx-3 my-3">
-            <div class="card mb-5 mb-xl-10">
-
-              <div class="container mb-5 mb-xl-10">
-                <h1 class="text-primary">Edit Profile</h1>
-                <hr />
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="text-center">
-                      <img
-                        src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                        class="avatar img-circle img-thumbnail"
-                        alt="avatar"
-                      />
-                      <h6>Upload a different photo...</h6>
-
-                      <input type="file" class="form-control" />
-                    </div>
-                  </div>
-
-                  <div class="col-md-9 personal-info">
-                    <div class="alert alert-info alert-dismissable">
-                      <a class="panel-close close" data-dismiss="alert">
-                        ×
-                      </a>
-                      <i class="fa fa-coffee"></i>
-                      This is an <strong>.alert</strong>. Use this to show
-                      important messages to the user.
-                    </div>
-                    <h3>Personal info</h3>
-
-                    <form class="form-horizontal" role="form">
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">
-                          First name:
-                        </label>
-                        <div class="col-lg-8">
-                          <input
-                            class="form-control"
-                            type="text"
-                            value="dey-dey"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">Last name:</label>
-                        <div class="col-lg-8">
-                          <input
-                            class="form-control"
-                            type="text"
-                            value="bootdey"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">Company:</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" type="text" value="" />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">Email:</label>
-                        <div class="col-lg-8">
-                          <input
-                            class="form-control"
-                            type="text"
-                            value="janesemail@gmail.com"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">Time Zone:</label>
-                        <div class="col-lg-8">
-                          <div class="ui-select">
-                            <select id="user_time_zone" class="form-control">
-                              <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                              <option value="Alaska">(GMT-09:00) Alaska</option>
-                              <option value="Pacific Time (US &amp; Canada)">
-                                (GMT-08:00) Pacific Time (US &amp; Canada)
-                              </option>
-                              <option value="Arizona">
-                                (GMT-07:00) Arizona
-                              </option>
-                              <option value="Mountain Time (US &amp; Canada)">
-                                (GMT-07:00) Mountain Time (US &amp; Canada)
-                              </option>
-                              <option
-                                value="Central Time (US &amp; Canada)"
-                                selected="selected"
-                              >
-                                (GMT-06:00) Central Time (US &amp; Canada)
-                              </option>
-                              <option value="Eastern Time (US &amp; Canada)">
-                                (GMT-05:00) Eastern Time (US &amp; Canada)
-                              </option>
-                              <option value="Indiana (East)">
-                                (GMT-05:00) Indiana (East)
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+            <div className="row gx-5 mx-3 my-3 px-5">
+              <div class="border-0 mb-4">
+                <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                  <h3 class="fw-bold mb-0">Users List</h3>
+                  <Link to={`add`}>
+                    {" "}
+                    
+                    <button className="px-2 py-2 my-2 add-btn">
+                      {" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-plus-circle-fill mr-2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                      </svg>
+                      <span className="m-1">Add</span>{" "}
+                    </button>{" "}
+                  </Link>
+                  <AllProductsTable/>
                 </div>
-              </div>
               </div>
             </div>
           </div>
