@@ -54,7 +54,7 @@ export const AllCategoryTable = () => {
     },
     {
       name: "Date Added",
-      selector: (row) => formatDate(row.created_at),
+      selector: (row) => get_current_day_and_time(row.created_at),
       sortable: true,
     },
 

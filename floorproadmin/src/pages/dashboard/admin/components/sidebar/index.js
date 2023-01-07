@@ -43,11 +43,11 @@ export const AdminSidebar = () => {
           <a href={"/admin-dashboard/messages"} className="sidebar-menu-item">
             Message
           </a>
-          <a href={"/admin-dashboard/requests"} className="sidebar-menu-item">
+          {/* <a href={"/admin-dashboard/requests"} className="sidebar-menu-item">
             Requests
-          </a>
-          <a href={"/admin-dashboard/queries"} className="sidebar-menu-item">
-            Queries
+          </a> */}
+          <a href={"/admin-dashboard/appointment"} className="sidebar-menu-item">
+            Appointment
           </a>
           <a href={"/admin-dashboard/settings"} className="sidebar-menu-item">
             Settings

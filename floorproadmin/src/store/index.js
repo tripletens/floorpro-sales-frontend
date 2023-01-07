@@ -6,6 +6,8 @@ import { OrderSlice } from "./orders";
 import { orderApi } from "./orders/api";
 import { productApi } from "./product/api";
 import { usersApi } from "./users/api";
+import { messageApi } from "./message/api";
+import { appointmentApi } from "./appointment/api";
 
 
 export const store = configureStore({
@@ -17,5 +19,7 @@ export const store = configureStore({
     [categoryApi.reducerPath]: categoryApi.reducer,
     [productApi.reducerPath]: productApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
+    [messageApi.reducerPath]: messageApi.reducer,
+    [appointmentApi.reducerPath]: appointmentApi.reducer,
   },
 });
