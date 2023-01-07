@@ -10,7 +10,6 @@ import "./index.css";
 const DashboardNavbar = () => {
   const user_data = sessionStorage.getItem("user_data") ? JSON.parse(sessionStorage.getItem("user_data")) : null;
   
-  console.log({user_data});
   const dispatch = useDispatch();
   let navigate = useNavigate();
 

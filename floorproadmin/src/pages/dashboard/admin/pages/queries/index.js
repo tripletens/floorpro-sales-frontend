@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DashboardNavbar from "../../components/navbar";
 import { AdminSidebar } from "../../components/sidebar";
-import { AllProductsTable } from "../../components/tables/allproducts";
+import { AllCategoryTable } from "../../components/tables/allcategory";
+// import styled from 'styled-components';
 import "./index.css";
 
-export const AdminDashboardRequests = () => {
+export const AdminDashboardQueries = () => {
   return (
     <>
       <DashboardNavbar />
@@ -18,7 +19,7 @@ export const AdminDashboardRequests = () => {
             <div className="row gx-5 mx-3 my-3 px-5">
               <div class="border-0 mb-4">
                 <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                  <h3 class="fw-bold mb-0">Requests List</h3>
+                  <h3 class="fw-bold mb-0">Query List</h3>
                   <Link to={`add`}>
                     {" "}
                     
@@ -37,7 +38,7 @@ export const AdminDashboardRequests = () => {
                       <span className="m-1">Add</span>{" "}
                     </button>{" "}
                   </Link>
-                  <AllProductsTable/>
+                  <AllCategoryTable />
                 </div>
               </div>
             </div>
