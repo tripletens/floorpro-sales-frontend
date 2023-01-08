@@ -11,14 +11,9 @@ import { ProductPage } from "./pages/product";
 import { Users } from "./pages/users";
 import { AdminDashboardProducts } from "./pages/dashboard/admin/pages/products";
 import { AdminDashboardOrders } from "./pages/dashboard/admin/pages/orders";
-<<<<<<< HEAD
-import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages";
-import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests";
-=======
 import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages/index";
 import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests/index";
 import { AdminDashboardQueries } from "./pages/dashboard/admin/pages/queries/index";
->>>>>>> origin
 import { AdminDashboardSettings } from "./pages/dashboard/admin/pages/settings";
 import { ProductOnePage } from "./pages/dashboard/admin/pages/products/productone";
 import { ProductDetails } from "./pages/dashboard/admin/pages/products/productdetails";
@@ -28,17 +23,13 @@ import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { CategoryOnePage} from "./pages/dashboard/admin/pages/category/categoryone";
 import { AdminDashboardCategory } from "./pages/dashboard/admin/pages/category";
-import ProductAdd from "./pages/dashboard/admin/pages/products/productadd";
 import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
 import { AddOrderPage } from "./pages/dashboard/admin/pages/orders/addorder";
 import { OrderPage } from "./pages/dashboard/admin/pages/orders/orderdetails";
-<<<<<<< HEAD
 import { MessagesReply } from "./pages/dashboard/admin/pages/messages/messagereply";
 import { AdminDashboardAppointment } from "./pages/dashboard/admin/pages/appointment";
-=======
 import { AddProductPage } from "./pages/dashboard/admin/pages/products/addproduct";
 import { OrderOne } from "./pages/dashboard/admin/pages/orders/orderone";
->>>>>>> origin
 
 
 
