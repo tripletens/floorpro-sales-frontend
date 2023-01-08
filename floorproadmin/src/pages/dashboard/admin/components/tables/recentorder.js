@@ -75,9 +75,9 @@ export const RecentOrderTable = () => {
     {
       name: "",
       button: true,
-      selector: (row) => row.id,
+      selector: (row) => row.ref,
       cell: (row) => (
-        <a href={`orders/${row.id}`} className="product-eye">
+        <a href={`admin-dashboard/orders/${row.ref}`} className="product-eye">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

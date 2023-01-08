@@ -27,6 +27,9 @@ export const AllProductsTable = () => {
     }
   }, [products]);
 
+
+  console.log("products",{products});
+  
   function getNumberOfPages(rowCount, rowsPerPage) {
     return Math.ceil(rowCount / rowsPerPage);
   }

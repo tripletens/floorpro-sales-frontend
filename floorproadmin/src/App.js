@@ -11,12 +11,18 @@ import { ProductPage } from "./pages/product";
 import { Users } from "./pages/users";
 import { AdminDashboardProducts } from "./pages/dashboard/admin/pages/products";
 import { AdminDashboardOrders } from "./pages/dashboard/admin/pages/orders";
+<<<<<<< HEAD
 import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages";
 import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests";
+=======
+import { AdminDashboardMessages } from "./pages/dashboard/admin/pages/messages/index";
+import { AdminDashboardRequests } from "./pages/dashboard/admin/pages/requests/index";
+import { AdminDashboardQueries } from "./pages/dashboard/admin/pages/queries/index";
+>>>>>>> origin
 import { AdminDashboardSettings } from "./pages/dashboard/admin/pages/settings";
 import { ProductOnePage } from "./pages/dashboard/admin/pages/products/productone";
 import { ProductDetails } from "./pages/dashboard/admin/pages/products/productdetails";
-import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users";
+import { AdminDashboardUsers } from "./pages/dashboard/admin/pages/users/index";
 import { AdminDashboardUserDetails } from "./pages/dashboard/admin/pages/users/userdetails";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
@@ -26,8 +32,13 @@ import ProductAdd from "./pages/dashboard/admin/pages/products/productadd";
 import { AddCategoryPage } from "./pages/dashboard/admin/pages/category/addcategory";
 import { AddOrderPage } from "./pages/dashboard/admin/pages/orders/addorder";
 import { OrderPage } from "./pages/dashboard/admin/pages/orders/orderdetails";
+<<<<<<< HEAD
 import { MessagesReply } from "./pages/dashboard/admin/pages/messages/messagereply";
 import { AdminDashboardAppointment } from "./pages/dashboard/admin/pages/appointment";
+=======
+import { AddProductPage } from "./pages/dashboard/admin/pages/products/addproduct";
+import { OrderOne } from "./pages/dashboard/admin/pages/orders/orderone";
+>>>>>>> origin
 
 
 
@@ -61,7 +72,7 @@ function App() {
 
             <Route path="orders"> 
               <Route path={""} element={<AdminDashboardOrders />} />
-              <Route path=":ref" element={<OrderPage />} />
+              <Route path=":ref" element={<OrderOne />} />
               <Route path="add" element={<AddOrderPage />} />
             </Route>
 
@@ -74,7 +85,7 @@ function App() {
             <Route path="products">
               <Route path={""} element={<AdminDashboardProducts />} />
               <Route path=":id" element={<ProductDetails />} />
-              <Route path={"add"} element={<ProductAdd />} />
+              <Route path={"add"} element={<AddProductPage />} />
             </Route>
 
             <Route path="category"> 
