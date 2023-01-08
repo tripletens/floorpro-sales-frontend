@@ -628,10 +628,15 @@ export const AddProductPage = () => {
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      </div>
+      </div>
+      </div>
       </div>
     </>
   );
