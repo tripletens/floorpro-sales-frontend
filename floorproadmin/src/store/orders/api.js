@@ -60,7 +60,7 @@ export const orderApi = createApi({
     DeleteOrdersByRef: builder.query({
       query: (ref) => ({
         url: `delete_order/${ref}`,
-        method: "DELETE",
+        method: "GET",
       }),
     }),
   }),
