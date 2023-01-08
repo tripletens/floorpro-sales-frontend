@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useFetchAllOrdersQuery } from "../../../../../store/orders/api";
 import DataTable from "react-data-table-component";
-import { formatDate } from "../../../../../helpers";
-import { Link } from "react-router-dom";
+import { formatDate, get_current_day_and_time } from "../../../../../helpers";
 
+import { Link } from "react-router-dom";
 export const AllOrderTable = () => {
   const [allOrders, setAllOrders] = useState([]);
   const {
@@ -66,11 +66,17 @@ export const AllOrderTable = () => {
     {
       name: "Status",
       selector: (row) => row.status ?? "0",
+      cell: (row) =>
+      row.status == 1 ? (
+        <span class="badge bg-success">completed</span>
+      ) : (
+        <span class="badge bg-danger">Inprogress</span>
+      ),
       sortable: true,
     },
     {
       name: "Date",
-      selector: (row) => formatDate(row.created_at),
+      selector: (row) => get_current_day_and_time(row.created_at),
       sortable: true,
     },
     {
