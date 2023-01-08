@@ -54,13 +54,19 @@ export const AllCategoryTable = () => {
     },
     {
       name: "Date Added",
-      selector: (row) => formatDate(row.created_at),
+      selector: (row) => get_current_day_and_time(row.created_at),
       sortable: true,
     },
 
     {
       name: "Status",
       selector: (row) => row.status,
+      cell: (row) =>
+        row.status == 1 ? (
+          <span class="badge bg-success">Active</span>
+        ) : (
+          <span class="badge bg-danger">Inactive</span>
+        ),
       sortable: true,
     },
 

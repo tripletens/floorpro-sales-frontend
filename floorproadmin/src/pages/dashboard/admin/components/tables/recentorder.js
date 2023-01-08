@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFetchRecentOrdersQuery } from "../../../../../store/orders/api";
 import DataTable from "react-data-table-component";
+import { get_current_day_and_time } from "../../../../../helpers";
 
 export const RecentOrderTable = () => {
   const [recentOrders, setRecentOrders] = useState([]);
@@ -68,7 +69,7 @@ export const RecentOrderTable = () => {
     },
     {
       name: "Date",
-      selector: (row) => row.created_at,
+      selector: (row) => get_current_day_and_time(row.created_at),
       sortable: true,
     },
     {
