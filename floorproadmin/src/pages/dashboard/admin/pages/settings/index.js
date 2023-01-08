@@ -18,74 +18,74 @@ export const AdminDashboardSettings = () => {
         <div className="col-md-10 col-sm-0 col-lg-10 col-xs-0">
           <div className="container-fluid">
             <div className="row gx-5 mx-3 my-3 px-5">
-              <div class="card mb-5 mb-xl-10">
-                <div class="content ">
-                  <div class="row flex-column-reverse flex-md-row">
-                    <div class="col-md-8">
-                      <div class="tab-content" id="myTabContent">
+              <div className="card mb-5 mb-xl-10">
+                <div className="content ">
+                  <div className="row flex-column-reverse flex-md-row">
+                    <div className="col-md-8">
+                      <div className="tab-content" id="myTabContent">
                         <div
-                          class="tab-pane fade active show"
+                          className="tab-pane fade active show"
                           id="profile"
                           role="tabpanel"
                           aria-labelledby="profile-tab"
                         >
-                          <div class="mb-4">
-                            <div class="d-flex flex-column flex-md-row text-center text-md-start mb-3">
+                          <div className="mb-4">
+                            <div className="d-flex flex-column flex-md-row text-center text-md-start mb-3">
                               <div className="col-md-3">
                                 <div className="text-center">
                                   <img
                                     src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                    class="avatar img-circle img-thumbnail"
+                                    className="avatar img-circle img-thumbnail"
                                     alt="avatar"
                                     style={{ width: "200px !important" }}
                                   />
                                   <input
                                     type="file"
-                                    class="form-control"
+                                    className="form-control"
                                   ></input>
                                 </div>
-                                <p class="small text-muted mt-3">
+                                <p className="small text-muted mt-3">
                                   For best results, use an image at least 256px
                                   by 256px in either .jpg or .png format
                                 </p>
                               </div>
                             </div>
-                            <div class="card mb-4">
-                              <div class="card-body">
-                                <h6 class="card-title mb-4">
+                            <div className="card mb-4">
+                              <div className="card-body">
+                                <h6 className="card-title mb-4">
                                   Basic Information
                                 </h6>
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <div class="mb-3">
-                                      <label class="form-label">Name</label>
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="mb-3">
+                                      <label className="form-label">Name</label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="Adek Kembar"
                                       />
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">Username</label>
+                                    <div className="mb-3">
+                                      <label className="form-label">Username</label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="adek-kembar"
                                       />
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">Email</label>
+                                    <div className="mb-3">
+                                      <label className="form-label">Email</label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="wtaffe3@addthis.com"
                                       />
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">
+                                    <div className="mb-3">
+                                      <label className="form-label">
                                         Date of Birth
                                       </label>
-                                      <div class="d-flex gap-3">
+                                      <div className="d-flex gap-3">
                                         <input
                                           type={"date"}
                                           className="form-control"
@@ -94,10 +94,10 @@ export const AdminDashboardSettings = () => {
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="col-md-6">
-                                    <div class="mb-3">
-                                      <label class="form-label">Role</label>
-                                      <select class="form-select">
+                                  <div className="col-md-6">
+                                    <div className="mb-3">
+                                      <label className="form-label">Role</label>
+                                      <select className="form-select">
                                         <option value="">All</option>
                                         <option value="">Admin</option>
                                         <option value="">User</option>
@@ -106,9 +106,9 @@ export const AdminDashboardSettings = () => {
                                         </option>
                                       </select>
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">Status</label>
-                                      <select class="form-select">
+                                    <div className="mb-3">
+                                      <label className="form-label">Status</label>
+                                      <select className="form-select">
                                         <option value="">All</option>
                                         <option value="" selected="">
                                           Active
@@ -116,11 +116,11 @@ export const AdminDashboardSettings = () => {
                                         <option value="">Blocked</option>
                                       </select>
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">
+                                    <div className="mb-3">
+                                      <label className="form-label">
                                         Department
                                       </label>
-                                      <select class="form-select">
+                                      <select className="form-select">
                                         <option value="">All</option>
                                         <option value="">Sales</option>
                                         <option value="" selected="">
@@ -129,46 +129,46 @@ export const AdminDashboardSettings = () => {
                                         <option value="">Management</option>
                                       </select>
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">Gender</label>
+                                    <div className="mb-3">
+                                      <label className="form-label">Gender</label>
                                       <div>
-                                        <div class="form-check form-check-inline">
+                                        <div className="form-check form-check-inline">
                                           <input
                                             type="radio"
                                             id="inlineRadio1"
                                             name="inlineRadio"
-                                            class="form-check-input"
+                                            className="form-check-input"
                                           />
                                           <label
-                                            class="form-check-label"
+                                            className="form-check-label"
                                             for="inlineRadio1"
                                           >
                                             Male
                                           </label>
                                         </div>
-                                        <div class="form-check form-check-inline">
+                                        <div className="form-check form-check-inline">
                                           <input
                                             type="radio"
                                             id="inlineRadio2"
                                             name="inlineRadio"
-                                            class="form-check-input"
+                                            className="form-check-input"
                                           />
                                           <label
-                                            class="form-check-label"
+                                            className="form-check-label"
                                             for="inlineRadio2"
                                           >
                                             Female
                                           </label>
                                         </div>
-                                        <div class="form-check form-check-inline">
+                                        <div className="form-check form-check-inline">
                                           <input
                                             type="radio"
                                             id="inlineRadio3"
                                             name="inlineRadio"
-                                            class="form-check-input"
+                                            className="form-check-input"
                                           />
                                           <label
-                                            class="form-check-label"
+                                            className="form-check-label"
                                             for="inlineRadio3"
                                           >
                                             Other
@@ -185,86 +185,86 @@ export const AdminDashboardSettings = () => {
                               </div>
                             </div>
                           </div>
-                          <div class="card mb-4">
-                            <div class="card-body">
-                              <h5 class="card-title mb-4">Contact</h5>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="mb-3">
-                                    <label class="form-label">Phone</label>
+                          <div className="card mb-4">
+                            <div className="card-body">
+                              <h5 className="card-title mb-4">Contact</h5>
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="mb-3">
+                                    <label className="form-label">Phone</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="+65195892151"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">Website</label>
+                                  <div className="mb-3">
+                                    <label className="form-label">Website</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="http://laborasyon.com/"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">Languages</label>
+                                  <div className="mb-3">
+                                    <label className="form-label">Languages</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="http://laborasyon.com/"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">
+                                  <div className="mb-3">
+                                    <label className="form-label">
                                       Address Line 1
                                     </label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="A-65, Belvedere Streets"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">
+                                  <div className="mb-3">
+                                    <label className="form-label">
                                       Address Line 2
                                     </label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value=""
                                     />
                                   </div>
                                 </div>
-                                <div class="col-md-6">
-                                  <div class="mb-3">
-                                    <label class="form-label">Post Code</label>
+                                <div className="col-md-6">
+                                  <div className="mb-3">
+                                    <label className="form-label">Post Code</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="1868"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">City</label>
+                                  <div className="mb-3">
+                                    <label className="form-label">City</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="New York"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">State</label>
+                                  <div className="mb-3">
+                                    <label className="form-label">State</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="New York"
                                     />
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label">Country</label>
+                                  <div className="mb-3">
+                                    <label className="form-label">Country</label>
                                     <input
                                       type="text"
-                                      class="form-control"
+                                      className="form-control"
                                       value="United States"
                                     />
                                   </div>
@@ -276,45 +276,45 @@ export const AdminDashboardSettings = () => {
                               </button>{" "}
                             </div>
                           </div>
-                          <div class="card">
-                            <div class="card-body">
-                              <h6 class="card-title mb-4">Social</h6>
+                          <div className="card">
+                            <div className="card-body">
+                              <h6 className="card-title mb-4">Social</h6>
                               <form>
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <div class="mb-3">
-                                      <label class="form-label">Twitter</label>
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="mb-3">
+                                      <label className="form-label">Twitter</label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="https://twitter.com/roxana-roussell"
                                       />
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">Facebook</label>
+                                    <div className="mb-3">
+                                      <label className="form-label">Facebook</label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="https://www.facebook.com/roxana-roussell"
                                       />
                                     </div>
                                   </div>
-                                  <div class="col-md-6">
-                                    <div class="mb-3">
-                                      <label class="form-label">
+                                  <div className="col-md-6">
+                                    <div className="mb-3">
+                                      <label className="form-label">
                                         Instagram
                                       </label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="https://www.instagram.com/roxana-roussell/"
                                       />
                                     </div>
-                                    <div class="mb-3">
-                                      <label class="form-label">GitHub</label>
+                                    <div className="mb-3">
+                                      <label className="form-label">GitHub</label>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         value="https://github.com/roxana-roussell"
                                       />
                                     </div>
@@ -329,129 +329,129 @@ export const AdminDashboardSettings = () => {
                           </div>
                         </div>
                         <div
-                          class="tab-pane fade"
+                          className="tab-pane fade"
                           id="password"
                           role="tabpanel"
                           aria-labelledby="password-tab"
                         >
-                          <div class="card">
-                            <div class="card-body">
-                              <h6 class="card-title mb-4">Change Password</h6>
-                              <div class="mb-3">
-                                <label class="form-label">Old Password</label>
-                                <input type="password" class="form-control" />
+                          <div className="card">
+                            <div className="card-body">
+                              <h6 className="card-title mb-4">Change Password</h6>
+                              <div className="mb-3">
+                                <label className="form-label">Old Password</label>
+                                <input type="password" className="form-control" />
                               </div>
-                              <div class="mb-3">
-                                <label class="form-label">New Password</label>
-                                <input type="password" class="form-control" />
+                              <div className="mb-3">
+                                <label className="form-label">New Password</label>
+                                <input type="password" className="form-control" />
                               </div>
-                              <div class="mb-3">
-                                <label class="form-label">
+                              <div className="mb-3">
+                                <label className="form-label">
                                   New Password Repeat
                                 </label>
-                                <input type="password" class="form-control" />
+                                <input type="password" className="form-control" />
                               </div>
                             </div>
                           </div>
                         </div>
                         {/* <div
-                          class="tab-pane fade"
+                          className="tab-pane fade"
                           id="notification-settings"
                           role="tabpanel"
                           aria-labelledby="notification-settings-tab"
                         >
-                          <div class="card">
-                            <div class="card-body">
-                              <h6 class="card-title mb-4">Notifications</h6>
-                              <h6 class="mb-4">Activity Notifications</h6>
-                              <div class="mb-5">
-                                <div class="mb-3">
-                                  <div class="form-check form-switch">
+                          <div className="card">
+                            <div className="card-body">
+                              <h6 className="card-title mb-4">Notifications</h6>
+                              <h6 className="mb-4">Activity Notifications</h6>
+                              <div className="mb-5">
+                                <div className="mb-3">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       checked=""
                                       id="cs1"
                                     />
-                                    <label class="form-check-label" for="cs1">
+                                    <label className="form-check-label" for="cs1">
                                       Someone assigns me to a task
                                     </label>
                                   </div>
                                 </div>
-                                <div class="mb-3">
-                                  <div class="form-check form-switch">
+                                <div className="mb-3">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       checked=""
                                       id="cs2"
                                     />
-                                    <label class="form-check-label" for="cs2">
+                                    <label className="form-check-label" for="cs2">
                                       Someone mentions me in a conversation
                                     </label>
                                   </div>
                                 </div>
-                                <div class="mb-3">
-                                  <div class="form-check form-switch">
+                                <div className="mb-3">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       checked=""
                                       id="cs3"
                                     />
-                                    <label class="form-check-label" for="cs3">
+                                    <label className="form-check-label" for="cs3">
                                       Someone adds me to a project
                                     </label>
                                   </div>
                                 </div>
-                                <div class="mb-3">
-                                  <div class="form-check form-switch">
+                                <div className="mb-3">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       id="cs4"
                                     />
-                                    <label class="form-check-label" for="cs4">
+                                    <label className="form-check-label" for="cs4">
                                       Activity on a project I am a member of
                                     </label>
                                   </div>
                                 </div>
                               </div>
-                              <h6 class="mb-4">Service Notifications</h6>
+                              <h6 className="mb-4">Service Notifications</h6>
                               <div>
-                                <div class="mb-3">
-                                  <div class="form-check form-switch">
+                                <div className="mb-3">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       id="cs5"
                                     />
-                                    <label class="form-check-label" for="cs5">
+                                    <label className="form-check-label" for="cs5">
                                       Monthly newsletter
                                     </label>
                                   </div>
                                 </div>
-                                <div class="mb-3">
-                                  <div class="form-check form-switch">
+                                <div className="mb-3">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       checked=""
                                       id="cs6"
                                     />
-                                    <label class="form-check-label" for="cs6">
+                                    <label className="form-check-label" for="cs6">
                                       Major feature enhancements
                                     </label>
                                   </div>
                                 </div>
                                 <div>
-                                  <div class="form-check form-switch">
+                                  <div className="form-check form-switch">
                                     <input
                                       type="checkbox"
-                                      class="form-check-input"
+                                      className="form-check-input"
                                       id="cs7"
                                     />
-                                    <label class="form-check-label" for="cs7">
+                                    <label className="form-check-label" for="cs7">
                                       Minor updates and bug fixes
                                     </label>
                                   </div>
@@ -461,76 +461,76 @@ export const AdminDashboardSettings = () => {
                           </div>
                         </div> */}
                         {/* <div
-                          class="tab-pane fade"
+                          className="tab-pane fade"
                           id="integrations"
                           role="tabpanel"
                           aria-labelledby="integrations-tab"
                         >
-                          <div class="card widget">
-                            <div class="card-header">
-                              <h6 class="card-title">Integrations</h6>
+                          <div className="card widget">
+                            <div className="card-header">
+                              <h6 className="card-title">Integrations</h6>
                             </div>
-                            <div class="card-body p-0 overflow-hidden">
-                              <div class="list-group list-group-flush">
-                                <div class="list-group-item p-4">
-                                  <div class="d-md-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                      <figure class="mb-0 me-3">
+                            <div className="card-body p-0 overflow-hidden">
+                              <div className="list-group list-group-flush">
+                                <div className="list-group-item p-4">
+                                  <div className="d-md-flex justify-content-between align-items-center">
+                                    <div className="d-flex align-items-center">
+                                      <figure className="mb-0 me-3">
                                         <img
                                           src="../../assets/svg/logo-integration-slack.svg"
                                           alt="..."
                                         />
                                       </figure>
                                       <div>
-                                        <h5 class="mb-1">Slack</h5>
-                                        <small class="text-muted">
+                                        <h5 className="mb-1">Slack</h5>
+                                        <small className="text-muted">
                                           Permissions: Read, Write, Comment
                                         </small>
                                       </div>
                                     </div>
-                                    <button class="btn btn-outline-danger mt-3 mt-md-0">
+                                    <button className="btn btn-outline-danger mt-3 mt-md-0">
                                       Disconnect
                                     </button>
                                   </div>
                                 </div>
-                                <div class="list-group-item p-4">
-                                  <div class="d-md-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                      <figure class="mb-0 me-3">
+                                <div className="list-group-item p-4">
+                                  <div className="d-md-flex justify-content-between align-items-center">
+                                    <div className="d-flex align-items-center">
+                                      <figure className="mb-0 me-3">
                                         <img
                                           src="../../assets/svg/logo-integration-drive.svg"
                                           alt="..."
                                         />
                                       </figure>
                                       <div>
-                                        <h5 class="mb-1">Google Drive</h5>
-                                        <small class="text-muted">
+                                        <h5 className="mb-1">Google Drive</h5>
+                                        <small className="text-muted">
                                           Permissions: Read, Write
                                         </small>
                                       </div>
                                     </div>
-                                    <button class="btn btn-outline-success mt-3 mt-md-0">
+                                    <button className="btn btn-outline-success mt-3 mt-md-0">
                                       Connect
                                     </button>
                                   </div>
                                 </div>
-                                <div class="list-group-item p-4">
-                                  <div class="d-md-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                      <figure class="mb-0 me-3">
+                                <div className="list-group-item p-4">
+                                  <div className="d-md-flex justify-content-between align-items-center">
+                                    <div className="d-flex align-items-center">
+                                      <figure className="mb-0 me-3">
                                         <img
                                           src="../../assets/svg/logo-integration-dropbox.svg"
                                           alt="..."
                                         />
                                       </figure>
                                       <div>
-                                        <h5 class="mb-1">Dropbox</h5>
-                                        <small class="text-muted">
+                                        <h5 className="mb-1">Dropbox</h5>
+                                        <small className="text-muted">
                                           Permissions: Read, Write, Upload
                                         </small>
                                       </div>
                                     </div>
-                                    <button class="btn btn-outline-danger mt-3 mt-md-0">
+                                    <button className="btn btn-outline-danger mt-3 mt-md-0">
                                       Disconnect
                                     </button>
                                   </div>
@@ -541,17 +541,17 @@ export const AdminDashboardSettings = () => {
                         </div> */}
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="card sticky-top mb-4 mb-md-0">
-                        <div class="card-body">
+                    <div className="col-md-4">
+                      <div className="card sticky-top mb-4 mb-md-0">
+                        <div className="card-body">
                           <ul
-                            class="nav nav-pills flex-column gap-2"
+                            className="nav nav-pills flex-column gap-2"
                             id="myTab"
                             role="tablist"
                           >
-                            <li class="nav-item" role="presentation">
+                            <li className="nav-item" role="presentation">
                               <a
-                                class="nav-link active"
+                                className="nav-link active"
                                 id="profile-tab"
                                 data-bs-toggle="tab"
                                 href="#profile"
@@ -559,12 +559,12 @@ export const AdminDashboardSettings = () => {
                                 aria-controls="profile"
                                 aria-selected="true"
                               >
-                                <i class="bi bi-person me-2"></i> Profile
+                                <i className="bi bi-person me-2"></i> Profile
                               </a>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            <li className="nav-item" role="presentation">
                               <a
-                                class="nav-link"
+                                className="nav-link"
                                 id="password-tab"
                                 data-bs-toggle="tab"
                                 href="#password"
@@ -572,12 +572,12 @@ export const AdminDashboardSettings = () => {
                                 aria-controls="password"
                                 aria-selected="false"
                               >
-                                <i class="bi bi-lock me-2"></i> Password
+                                <i className="bi bi-lock me-2"></i> Password
                               </a>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            {/* <li className="nav-item" role="presentation">
                               <a
-                                class="nav-link"
+                                className="nav-link"
                                 id="notification-settings-tab"
                                 data-bs-toggle="tab"
                                 href="#notification-settings"
@@ -585,12 +585,12 @@ export const AdminDashboardSettings = () => {
                                 aria-controls="notification-settings"
                                 aria-selected="false"
                               >
-                                <i class="bi bi-bell me-2"></i> Notifications
+                                <i className="bi bi-bell me-2"></i> Notifications
                               </a>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            <li className="nav-item" role="presentation">
                               <a
-                                class="nav-link"
+                                className="nav-link"
                                 id="integrations-tab"
                                 data-bs-toggle="tab"
                                 href="#integrations"
@@ -598,10 +598,10 @@ export const AdminDashboardSettings = () => {
                                 aria-controls="integrations"
                                 aria-selected="false"
                               >
-                                <i class="bi bi-arrow-down-up me-2"></i>{" "}
+                                <i className="bi bi-arrow-down-up me-2"></i>{" "}
                                 Integrations
                               </a>
-                            </li>
+                            </li> */}
                           </ul>
                         </div>
                       </div>
