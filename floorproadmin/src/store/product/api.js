@@ -13,14 +13,14 @@ export const productApi = createApi({
       const access_token = sessionStorage.getItem("access_token") ? sessionStorage.getItem("access_token") : null;
 
       // console.log({ token, access_token });
-      headers.set("content-type", "application/json");
-      headers.set("Accept", "application/json");
+      // headers.set("content-type", "application/json");
+      // headers.set("Accept", "application/json");
 
 
       if (access_token) {
         headers.set("authorization", `Bearer ${access_token}`);
         headers.set("Access-Control-Allow-Origin", "*");
-        headers.set("Content-Type", "application/json");
+        // headers.set("Content-Type", "application/json");
         // headers.set("Content-Type", "multipart/form-data");
       }
   
@@ -28,18 +28,6 @@ export const productApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    // login: builder.mutation({
-    //   // note: an optional `queryFn` may be used in place of `query`
-    //   query: (payload) => ({
-    //     url: "/login",
-    //     method: "POST",
-    //     body: {
-    //       email: payload.email,
-    //       password: payload.password,
-    //     },
-    //   }),
-    // }),
-    
     fetchAllProducts: builder.query({
       query: () => ({
         url: "fetch_all_products",
@@ -60,6 +48,7 @@ export const productApi = createApi({
       query: (payload) => ({
         url: "/add_product",
         method: "POST",
+        // headers: { 'Content-Type': 'multipart/form-data'},
         body: {
           name: payload.name,
           quantity: payload.quantity,

@@ -8,6 +8,7 @@ import { productApi } from "./product/api";
 import { usersApi } from "./users/api";
 import { messageApi } from "./message/api";
 import { appointmentApi } from "./appointment/api";
+import { departmentApi } from "./departments/api";
 
 
 export const store = configureStore({
@@ -21,5 +22,6 @@ export const store = configureStore({
     [usersApi.reducerPath]: usersApi.reducer,
     [messageApi.reducerPath]: messageApi.reducer,
     [appointmentApi.reducerPath]: appointmentApi.reducer,
+    [departmentApi.reducerPath]: departmentApi.reducer
   },
 });

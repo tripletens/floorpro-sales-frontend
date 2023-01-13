@@ -25,17 +25,22 @@ export const usersApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    // login: builder.mutation({
-    //   // note: an optional `queryFn` may be used in place of `query`
-    //   query: (payload) => ({
-    //     url: "/login",
-    //     method: "POST",
-    //     body: {
-    //       email: payload.email,
-    //       password: payload.password,
-    //     },
-    //   }),
-    // }),
+    updateBasicInformation: builder.mutation({
+      // note: an optional `queryFn` may be used in place of `query`
+      query: (payload) => ({
+        url: "/update_basic_information",
+        method: "POST",
+        body: {
+          user_id: payload.user_id,
+          name: payload.name,
+          username: payload.username,
+          status: payload.email,
+          department_id: payload.department_id,
+          gender: payload.gender,
+          dob: payload.dob
+        },
+      }),
+    }),
     
     fetchAllUsers: builder.query({
       query: () => ({
@@ -49,5 +54,6 @@ export const usersApi = createApi({
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { 
-  useFetchAllUsersQuery 
+  useFetchAllUsersQuery,
+  useUpdateBasicInformationMutation
 } = usersApi;
