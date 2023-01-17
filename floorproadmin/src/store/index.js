@@ -10,7 +10,6 @@ import { messageApi } from "./message/api";
 import { appointmentApi } from "./appointment/api";
 import { departmentApi } from "./departments/api";
 
-
 export const store = configureStore({
   reducer: {
     auth: AuthSlice.reducer,
@@ -22,6 +21,17 @@ export const store = configureStore({
     [usersApi.reducerPath]: usersApi.reducer,
     [messageApi.reducerPath]: messageApi.reducer,
     [appointmentApi.reducerPath]: appointmentApi.reducer,
-    [departmentApi.reducerPath]: departmentApi.reducer
+    [departmentApi.reducerPath]: departmentApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat([
+      orderApi.middleware,
+      authApi.middleware,
+      categoryApi.middleware,
+      productApi.middleware,
+      messageApi.middleware,
+      appointmentApi.middleware,
+      departmentApi.middleware
+    ]);
   },
 });
