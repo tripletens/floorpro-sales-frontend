@@ -14,12 +14,12 @@ export const AdminDashboard = () => {
       
       <DashboardNavbar />
       <div className="row">
-        <div className="col-md-2 col-sm-0 col-lg-2 col-xs-0">
+        <div className="col-md-2 col-lg-2">
           <AdminSidebar />
         </div>
-        <div className="col-md-10 col-sm-0 col-lg-10 col-xs-0">
-          <div className="container-fluid">
-            <div className="row gx-5 mx-3 mb-3">
+        <div className="col-md-10 col-lg-10 ">
+          <div className="container-fluid dashboard-content">
+            <div className="row gx- mx-3 mb-3">
             <div className="col dashboard_analytics_box">
               <div className="card-body">
             <div className="media d-flex">
@@ -88,7 +88,7 @@ export const AdminDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="container-fluid">
+          <div className="container-fluid dashboard-content">
             <div className="row gx-5 mx-3 my-3">
               <div className="col dashboard_analytics_box">
               <div className="card-body">
@@ -158,7 +158,7 @@ export const AdminDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="container-fluid">
+          <div className="container-fluid dashboard-content">
             <div className="row gx-5 mx-3 my-3 px-5">
               <div className="col">
                 <h2 className="DashboardOrderTitle my-3"> Recent Orders</h2>

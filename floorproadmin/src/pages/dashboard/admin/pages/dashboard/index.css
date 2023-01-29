@@ -694,3 +694,19 @@ p {
   
 }
 
+/* small screen mobile view size*/
+
+@media only screen and (max-width: 800px) {
+  .dashboard-content {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/* wide screen size */
+
+@media only screen and (min-width: 800px) {
+
+}
