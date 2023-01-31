@@ -20,6 +20,6 @@ export const AddProductValidation = Yup.object({
     .test("square_meter", "Square meter must be a number", (value) => {
       return /\d/.test(value);
     }),
-  product_category: Yup.string().required("Product category is required")
+    category_id: Yup.string().required("Product category is required")
   
 });

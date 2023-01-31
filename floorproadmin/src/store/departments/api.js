@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL, API_LOCAL_URL } from "../../config";
 // import { useDispatch, useSelector } from "react-redux";
 
 // const token = useSelector((state) => state.auth.token);
 // Define a service using a base URL and expected endpoints
-export const usersApi = createApi({
-  reducerPath: "usersApi",
+export const departmentApi = createApi({
+  reducerPath: "departmentApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: API_BASE_URL,
+    baseUrl: API_LOCAL_URL,
     prepareHeaders: (headers, { getState }) => {
       // By default, if we have a token in the store, let's use that for authenticated requests
       const access_token = sessionStorage.getItem("access_token") ? sessionStorage.getItem("access_token") : null;
@@ -25,26 +25,21 @@ export const usersApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    updateBasicInformation: builder.mutation({
-      // note: an optional `queryFn` may be used in place of `query`
-      query: (payload) => ({
-        url: "/update_basic_information",
-        method: "POST",
-        body: {
-          user_id: payload.user_id,
-          name: payload.name,
-          username: payload.username,
-          status: payload.email,
-          department_id: payload.department_id,
-          gender: payload.gender,
-          dob: payload.dob
-        },
-      }),
-    }),
+    // login: builder.mutation({
+    //   // note: an optional `queryFn` may be used in place of `query`
+    //   query: (payload) => ({
+    //     url: "/login",
+    //     method: "POST",
+    //     body: {
+    //       email: payload.email,
+    //       password: payload.password,
+    //     },
+    //   }),
+    // }),
     
-    fetchAllUsers: builder.query({
+    fetchAllDepartments: builder.query({
       query: () => ({
-        url: "users",
+        url: "fetch_all_departments",
         method: "GET",
       }),
     }),
@@ -54,6 +49,5 @@ export const usersApi = createApi({
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { 
-  useFetchAllUsersQuery,
-  useUpdateBasicInformationMutation
-} = usersApi;
+  useFetchAllDepartmentsQuery, 
+} = departmentApi;

@@ -42,3 +42,23 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+/* mobile screen size */
+
+@media only screen and (max-width: 800px) {
+  .sidebar-icons {
+    display: block;
+  }
+  .siderbar-text {
+    display: none;
+  }
+}
+
+
+/* wide screen size */
+
+@media only screen and (min-width: 800px) {
+  .sidebar-icons {
+    display: none;
+  }
+}

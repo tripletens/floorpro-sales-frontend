@@ -694,3 +694,57 @@ p {
   
 }
 
+.chart-icon {
+    position: relative;
+    left: 60px;
+    top: 20px;
+    font-size: 50px;
+    color: #fcc70e;
+}
+
+/* small screen mobile view size*/
+
+@media only screen and (max-width: 800px) {
+  .dashboard-content {
+    margin: 20px;
+  }
+
+  .dashboard-content-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+
+  .chart-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .chart-icon {
+    position: relative;
+    left: 30px;
+    top: 20px;
+    font-size: 50px;
+    color: #fcc70e;
+}
+  
+}
+
+
+/* wide screen size */
+
+@media only screen and (min-width: 800px) {
+  .chart-icon {
+    position: relative;
+    left: 50;
+    top: 20px;
+    font-size: 50px;
+    color: #fcc70e;
+}
+
+.dashboard {
+  margin: auto;
+}
+}

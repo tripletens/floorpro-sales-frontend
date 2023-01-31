@@ -1,14 +1,17 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFetchCategoriesQuery } from "../../../../../../store/category/api";
 import { useAddProductMutation } from "../../../../../../store/product/api";
 import DashboardNavbar from "../../../components/navbar";
 import { AdminSidebar } from "../../../components/sidebar";
 import { AddProductValidation } from "./validator";
 import { ToastContainer, toast } from "react-toastify";
+import { API_LOCAL_URL } from "../../../../../../config";
+import axios from "axios";
 
 export const AddProductPage = () => {
   const [selectedFile, setSelectedFile] = useState();
+  const [isloading, setIsLoading] = useState(false);
   // fetch the categories
   const {
     isLoading: fetchCategoriesIsLoading,
@@ -34,36 +37,53 @@ export const AddProductPage = () => {
     }
   };
 
-  console.log("file", selectedFile);
+  useEffect(() => {
+    
+  }, [isloading]);
 
   const AddProductFunction = (values, action) => {
-    console.log("hello work in progress");
+    let formData = new FormData();
 
-    const formData = new FormData();
+    let form_entry_values = Object.entries(values);
 
     formData.append("image", selectedFile);
 
-    values = { ...values, image: formData };
+    form_entry_values.map((item) => {
+      formData.append(item[0], item[1]);
+    });
+
+    console.log("form data", formData.getAll("product_category"));
+
+    console.log("image", formData.getAll("image"));
+
+    console.log("category_id", formData.getAll("category_id"));
+
+    console.log("object shit", Object.entries(formData));
+
+    values = { ...values, image: formData.getAll("image") };
 
     console.log({ values, action, formData });
 
-    AddProductMutation(values)
-      .unwrap()
+    const access_token = sessionStorage.getItem("access_token")
+      ? sessionStorage.getItem("access_token")
+      : null;
+
+    setIsLoading(true);
+    axios
+      .post(API_LOCAL_URL + "/add_product", formData, {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      })
       .then((res) => {
-        // dispatch(setToken(res.data.token));
-        // dispatch(setUser(userData));
-        console.log("res status", res);
-        if (res.status && res.status === "success") {
-          console.log("product addition successful");
-
-          // navigate("/admin-dashboard", { replace: true });
-
-          return toast.success(`Product added successfully!`, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-        }
+        console.log("response => ", { res });
+        setIsLoading(false);
+        return toast.success(`Product added successfully!`, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       })
       .catch((e) => {
+        setIsLoading(false);
         if (e.data && e.data.status === "error") {
           if (e.data.message.image[0]) {
             return toast.error(`${e.data.message.image[0]}!`, {
@@ -75,19 +95,9 @@ export const AddProductPage = () => {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
-
-        if (e.data && e.data.status === "FETCH_ERROR") {
-          return toast.error(`Please connect to the internet to continue!`, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-        }
-        console.log("error", e);
       });
   };
 
-  {
-    /* name, quantity, price, image, description, square_meter,category_id, vendor_id */
-  }
   // form validation
   const { values, errors, handleChange, handleSubmit, touched } = useFormik({
     initialValues: {
@@ -97,7 +107,7 @@ export const AddProductPage = () => {
       // image: "",
       description: "",
       square_meter: "",
-      product_category: "",
+      category_id: "",
     },
     validationSchema: AddProductValidation,
     onSubmit: AddProductFunction,
@@ -143,7 +153,7 @@ export const AddProductPage = () => {
                                     placeholder="Enter Product Name"
                                     onChange={handleChange}
                                   />
-                                  {touched.name ? (
+                                  {errors.name && touched.name ? (
                                     <span>
                                       <p className="login_password_alert">
                                         {errors.name}{" "}
@@ -169,7 +179,7 @@ export const AddProductPage = () => {
                                     placeholder="Enter Product Quantity"
                                     onChange={handleChange}
                                   />
-                                  {touched.quantity ? (
+                                  {errors.quantity && touched.quantity ? (
                                     <span>
                                       <p className="login_password_alert">
                                         {errors.quantity}{" "}
@@ -195,7 +205,7 @@ export const AddProductPage = () => {
                                     placeholder="Enter Product Price"
                                     onChange={handleChange}
                                   />
-                                  {touched.price ? (
+                                  {errors.price && touched.price ? (
                                     <span>
                                       <p className="login_password_alert">
                                         {errors.price}{" "}
@@ -221,7 +231,8 @@ export const AddProductPage = () => {
                                     placeholder="Enter Available Square Meter"
                                     onChange={handleChange}
                                   />
-                                  {touched.square_meter ? (
+                                  {errors.square_meter &&
+                                  touched.square_meter ? (
                                     <span>
                                       <p className="login_password_alert">
                                         {errors.square_meter}{" "}
@@ -277,7 +288,7 @@ export const AddProductPage = () => {
                                     rows="6"
                                     onChange={handleChange}
                                   ></textarea>
-                                  {touched.description ? (
+                                  {errors.description && touched.description ? (
                                     <span>
                                       <p className="login_password_alert">
                                         {errors.description}{" "}
@@ -289,17 +300,17 @@ export const AddProductPage = () => {
                                 </div>
                                 <div className="">
                                   <label
-                                    htmlFor="product_category"
+                                    htmlFor="category_id"
                                     className="form-label"
                                   >
                                     Product Category
                                   </label>
                                   <select
-                                    name="product_category"
+                                    name="category_id"
                                     className="form-control"
                                     onClick={handleChange}
                                   >
-                                    <option name="product_category[]" value="">
+                                    <option name="category_id[]" value="">
                                       {" "}
                                       -- select a product category --{" "}
                                     </option>
@@ -320,7 +331,8 @@ export const AddProductPage = () => {
                                         )
                                       : ""}
                                   </select>
-                                  {touched.product_category ? (
+                                  {errors.product_category &&
+                                  touched.product_category ? (
                                     <span>
                                       <p className="login_password_alert">
                                         {errors.product_category}{" "}
@@ -335,7 +347,7 @@ export const AddProductPage = () => {
                                   onClick={handleSubmit}
                                   className="float-end login-btn my-3"
                                 >
-                                  {addProductIsLoading ? (
+                                  {isloading ? (
                                     <>
                                       <div
                                         className="spinner-border loginloader"

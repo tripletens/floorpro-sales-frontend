@@ -53,8 +53,9 @@ const DashboardNavbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             
             </ul>
-            <div className="d-flex mr-3">
-              <div className="dropdown">
+            
+            <div className="d-flex mr-3 ">
+              <div className="dropdown" >
                 <a
                   className="btn btn-secondary dropdown-toggle mr-6 user_profile_btn"
                   href="#"
