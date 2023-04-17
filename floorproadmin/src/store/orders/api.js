@@ -57,6 +57,14 @@ export const orderApi = createApi({
         method: "GET",
       }),
     }),
+    
+    generateInvoice: builder.query({
+      query: (ref) => ({
+        url: `invoice/${ref}`,
+        method: "GET",
+      }),
+    }),
+
     DeleteOrdersByRef: builder.query({
       query: (ref) => ({
         url: `delete_order/${ref}`,
@@ -73,4 +81,5 @@ export const {
   useFetchAllOrdersQuery,
   useDeleteOrdersByRefQuery,
   useFetchOrderByRefQuery,
+  useGenerateInvoiceQuery
 } = orderApi;

@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import React, { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFetchAllDepartmentsQuery } from "../../../../../../store/departments/api";
 import { useUpdateBasicInformationMutation } from "../../../../../../store/users/api";
@@ -8,6 +9,7 @@ import { UpdateBasicInfoValidation } from "./validator";
 
 const UpdateBasicInformation = () => {
   const [department, setdepartment] = useState([]);
+  let navigate = useNavigate();
   const [
     UpdateBasicInfoMutation,
     {
@@ -38,7 +40,7 @@ const UpdateBasicInformation = () => {
   }, [department]);
 
   const UpdateBasicInfoFunction = (values, action) => {
-    console.log("valeus =>", { values, action });
+    console.log("values =>", { values, action });
 
     UpdateBasicInfoMutation(values)
       .unwrap()
@@ -46,13 +48,23 @@ const UpdateBasicInformation = () => {
         // dispatch(setToken(res.data.token));
         // dispatch(setUser(userData));
         console.log("res status", res);
+
         if (res.status && res.status === "success") {
-          return toast.success(`Login Successful!`, {
+          return toast.success(`Profile updated successfully!`, {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
       })
       .catch((e) => {
+
+        if (e.status == 401) {
+          console.log("Login Error, unauthenticated");
+          navigate("/", { replace: true });
+          return toast.error(`${e.data.message}!`, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
+
         if (e.data && e.data.status === "error") {
           console.log("Login Error");
           return toast.error(`${e.data.message}!`, {
@@ -78,10 +90,10 @@ const UpdateBasicInformation = () => {
       email: userDetails ? userDetails.email : null,
       name: "",
       user_id: userDetails ? userDetails.id : "",
-      gender: userDetails ? userDetails.gender : "",
-      dob: userDetails ? userDetails.dob : "",
-      role: userDetails ? userDetails.role : "",
-      department_id: userDetails ? userDetails.department_id : "",
+      gender: "",
+      dob: "",
+      role: "",
+      department_id: "",
       status: "",
     },
 
@@ -91,7 +103,7 @@ const UpdateBasicInformation = () => {
 
   return (
     <>
-      <div className="card mb-4">
+      <div className="card mb-4 m-3">
         <div className="card-body">
           <h6 className="card-title mb-4">Basic Information</h6>
           <form>
@@ -116,7 +128,7 @@ const UpdateBasicInformation = () => {
                     ""
                   )}
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 form-group">
                   <label className="form-label">Username</label>
                   <input
                     type="text"
@@ -133,9 +145,14 @@ const UpdateBasicInformation = () => {
                     ""
                   )}
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 m">
                   <label className="form-label">Email</label>
-                  <input type="text" value={userDetails && userDetails.email} className="form-control" disabled />
+                  <input
+                    type="text"
+                    value={userDetails && userDetails.email}
+                    className="form-control"
+                    disabled
+                  />
                   {touched.email && errors.email ? (
                     <span>
                       <p className="login_password_alert">{errors.email} </p>
@@ -172,10 +189,10 @@ const UpdateBasicInformation = () => {
                     name="role"
                     onChange={handleChange}
                   >
-                    <option defaultValue="admin" name="role[]">
+                    <option value="admin" name="role[]">
                       Admin
                     </option>
-                    <option value="sales-rep" name="role[]">
+                    <option value="salesrep" name="role[]">
                       Sales Rep
                     </option>
                   </select>
@@ -189,18 +206,24 @@ const UpdateBasicInformation = () => {
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Status</label>
-                  <select className="form-select" name="status" onClick={handleChange}>
-                    <option value="" name="status[]">-- select a status -- </option>
+                  <select
+                    className="form-select"
+                    name="status"
+                    onChange={handleChange}
+                  >
+                    <option value="" name="status[]">
+                      -- select a status --{" "}
+                    </option>
                     <option
                       value="1"
-                      selected={values.status == 1 ? true : false}
+                      // selected={values.status == "1" ? true : false}
                       name="status[]"
                     >
                       Active
                     </option>
                     <option
                       value="0"
-                      selected={values.status == 1 ? true : false}
+                      // selected={values.status == "1" ? true : false}
                       name="status[]"
                     >
                       Inactive
@@ -216,16 +239,24 @@ const UpdateBasicInformation = () => {
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Department</label>
-                  <select className="form-select" name="department">
-                    <option value="" name="department[]">Select a department</option>
+                  <select
+                    className="form-select"
+                    name="department_id"
+                    onChange={handleChange}
+                  >
+                    <option value="" name="department_id[]">
+                      Select a department
+                    </option>
                     {fetchdepartmentData && fetchdepartmentData.data
-                      ? department.map((item, key) => {
+                      ? fetchdepartmentData.data.map((item, key) => {
                           return (
-                            <>
-                              <option key={key} value={item.id} selected={values.department_id == item.id ? true : false}>
-                                {item.name}
-                              </option>
-                            </>
+                            <option
+                              key={key}
+                              name="department_id[]"
+                              value={item.id}
+                            >
+                              {item.name}
+                            </option>
                           );
                         })
                       : ""}
@@ -243,7 +274,10 @@ const UpdateBasicInformation = () => {
                         onChange={handleChange}
                         className="form-check-input"
                       />
-                      <label className="form-check-label" for="inlineRadio1">
+                      <label
+                        className="form-check-label"
+                        htmlFor="inlineRadio1"
+                      >
                         Male
                       </label>
                     </div>
@@ -256,7 +290,10 @@ const UpdateBasicInformation = () => {
                         onChange={handleChange}
                         className="form-check-input"
                       />
-                      <label className="form-check-label" for="inlineRadio2">
+                      <label
+                        className="form-check-label"
+                        htmlFor="inlineRadio2"
+                      >
                         Female
                       </label>
                     </div>
@@ -264,12 +301,8 @@ const UpdateBasicInformation = () => {
                 </div>
               </div>
             </div>
-            
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="float-end login-btn my-3"
-            >
+
+            <button className="px-2 py-2 my-2 add-btn float-end" onClick={handleSubmit}>
               {fetchdepartmentIsLoading ? (
                 <>
                   <div className="spinner-border loginloader" role="status">
@@ -277,9 +310,11 @@ const UpdateBasicInformation = () => {
                   </div>
                 </>
               ) : (
-                "Submit"
+                <>
+                  <span className="m-1">Submit</span>
+                </>
               )}
-            </button>
+            </button>{" "}
           </form>
         </div>
       </div>

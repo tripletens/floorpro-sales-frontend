@@ -12,10 +12,10 @@ export const AdminDashboardOrders = () => {
     <>
       <DashboardNavbar />
       <div className="row">
-        <div className="col-md-2 col-sm-0 col-lg-2 col-xs-0">
+        <div className="col-md-2 col-sm-2 col-lg-2 col-xs-0">
           <AdminSidebar />
         </div>
-        <div className="col-md-10 col-sm-0 col-lg-10 col-xs-0">
+        <div className="col-md-10 col-sm-10 col-lg-10 col-xs-0">
           <div className="container-fluid">
             <div className="row gx-5 mx-3 my-3 px-5">
               <div class="border-0 mb-4">

@@ -158,3 +158,26 @@ body {
 .btn-order {
   margin: auto;
 }
+
+
+@media (max-width: 700px) {
+  .rightbox {
+    position: relative;
+    margin-left: 60px;
+  }
+  .header_box{
+    position: relative;
+    margin-left: 60px;
+  }
+}
+
+@media (min-width: 700px) {
+  .rightbox {
+    position: relative;
+    margin-left: 60px;
+  }
+  .header_box{
+    position: relative;
+    margin-left: auto;
+  }
+}

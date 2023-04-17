@@ -31,7 +31,8 @@ export const store = configureStore({
       productApi.middleware,
       messageApi.middleware,
       appointmentApi.middleware,
-      departmentApi.middleware
+      departmentApi.middleware,
+      usersApi.middleware
     ]);
   },
 });
